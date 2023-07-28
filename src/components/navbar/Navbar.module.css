@@ -1,0 +1,38 @@
+.nav {
+    height: 60px;
+    background-color: var(--nav-bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    width: 100vw;
+    position: fixed;
+}
+.nav > ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    margin-left: 10px;
+    padding-left: 0;
+}
+.nav > ul > li {
+    margin-left: 20px;
+}
+
+.link {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.linksContainer {
+    margin-right: 30px;
+}
+.icon {
+    object-fit: contain;
+    width: 100%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 0 5px white;
+    border-radius: 50%;
+    vertical-align: middle;
+}

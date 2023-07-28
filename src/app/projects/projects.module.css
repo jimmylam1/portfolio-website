@@ -1,0 +1,11 @@
+.projects {
+    background-color: rgb(27, 31, 44);
+    padding-bottom: 50px;
+}
+.projects > h2 {
+    margin: 0;
+    padding-top: 100px;
+    text-align: center;
+    color: var(--text-color);
+    font-size: min(30px, 10vw);
+}

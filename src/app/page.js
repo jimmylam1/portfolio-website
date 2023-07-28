@@ -1,95 +1,66 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import pageStyle from './page.module.css'
+import { Poppins, Roboto_Mono } from 'next/font/google'
+import SkillIcon from '@/components/skillIcon/SkillIcon'
+import skills from '../data/skills'
+import projectsArray from '../data/projects'
+import Project from '@/components/project/Project'
+import Contact from '@/components/contact/Contact'
+import Link from 'next/link'
+
+const poppins600 = Poppins({ subsets: ['latin'], weight: "600" })
+const robotoMono600 = Roboto_Mono({ subsets: ['latin'], weight: '600'})
+
+export const metadata = {
+    title: 'Jimmy Lam',
+}
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    const skillsArray = getSkills()
+
+    return (
+        <div className={pageStyle.container}>
+
+            <div className={pageStyle.heroContainer}>
+                <div className={pageStyle.hero}>
+                    <h1 className={poppins600.className}>JIMMY LAM</h1>
+                    <h4 className={robotoMono600.className}>Software Engineer</h4>
+                </div>
+                <div className={pageStyle.skillsWave1}></div>
+            </div>
+
+            <div className={pageStyle.skills}>
+                <h2 className={robotoMono600.className}>Skills</h2>
+                <div className={pageStyle.iconContainer}>
+                    {skillsArray}
+                </div>
+            </div>
+
+            <div className={pageStyle.projects}>
+                <div className={pageStyle.skillsWave2}></div>
+                <h2 className={robotoMono600.className}>Highlighted Projects</h2>
+                {projectsArray.filter(p => p.isHighlight).map((p, idx) => (
+                    <Project     
+                        key={idx}
+                        title={p.title}
+                        image={p.image}
+                        category={p.category}
+                        tags={p.tags}
+                        bulletPoints={p.bulletPoints}
+                        pageUrl={p.pageUrl}
+                        links={p.links}
+                    />
+                ))}
+                <Link className={pageStyle.allProjectsBtn} href='/projects'>View All Projects</Link>
+            </div>
+            
+            <div className={pageStyle.contact}>
+                <h2 className={robotoMono600.className}>Contact</h2>
+                <Contact />
+            </div>
         </div>
-      </div>
+    );
+}
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+function getSkills() {
+    return skills.map(s => <SkillIcon key={s.id} imgPath={s.path} name={s.name}/>)
 }

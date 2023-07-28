@@ -1,0 +1,63 @@
+.tag {
+    padding: 3px 10px;
+    border-radius: 3px;
+    background-color: aliceblue;
+    color: black;
+    align-self: start;
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.black {
+    color: white;
+    background-color: black;
+}
+.javascript {
+    color: black;
+    background-color: #F7E018;
+}
+.python {
+    color: white;
+    background-color: #367EBA;
+}
+.c {
+    color: white;
+    background-color: #659BD3;
+}
+.html {
+    color: white;
+    background-color: #EF652A;
+}
+.css {
+    color: white;
+    background-color: #2565F2;
+}
+.react {
+    color: black;
+    background-color: #61DBFB;
+}
+.mongo {
+    color: black;
+    background-color: #00EE64;
+}
+.nodejs {
+    color: black;
+    background-color: #8CC84B;
+}
+.sqlite {
+    color: black;
+    background-color: #90D6F4;
+}
+.docker {
+    color: white;
+    background-color: #0093E2;
+}
+.git {
+    color: white;
+    background-color: #F05033;
+}
+.arduino {
+    color: white;
+    background-color: #029CA1;
+}
