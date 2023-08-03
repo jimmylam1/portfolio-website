@@ -3,22 +3,25 @@
 import Image from "next/image";
 import Link from 'next/link';
 import Tag from "../tag/Tag";
-import LinkButton from "../linkButton/LinkButton";
 import projectCss from './Project.module.css'
 import { Poppins } from "next/font/google";
 import useWindowSize from "@/hooks/useWindowSize";
+import getLinkButtons from "@/scripts/getLinkButtons";
 
 const poppins400 = Poppins({ subsets: ['latin'], weight: "400" })
 const poppins200 = Poppins({ subsets: ['latin'], weight: "200" })
 const poppins300 = Poppins({ subsets: ['latin'], weight: "300" })
 
-export default function Project({title, image, category, tags, bulletPoints, pageUrl, links}) {
+export function Project({title, image, category, tags, bulletPoints, pageUrl, links}) {
     const windowSize = useWindowSize()
     if (windowSize.width > 1100) {
         return desktopLayout({title, image, category, tags, bulletPoints, pageUrl, links})
     }
     return mobileLayout({title, image, category, tags, bulletPoints, pageUrl, links})
 }
+
+// ------------------------------------------------------------------------------------------
+// list all projects
 
 function desktopLayout({title, image, category, tags, bulletPoints, pageUrl, links}) {
     return (
@@ -68,12 +71,28 @@ function mobileLayout({title, image, category, tags, bulletPoints, pageUrl, link
     )
 }
 
-function getLinkButtons(links) {
-    let linksArray = []
-    for (let key of Object.keys(links)) {
-        if (links[key]) {
-            linksArray.push(<LinkButton name={key} linkUrl={links[key]} />)
-        }
+// ------------------------------------------------------------------------------------------
+// for individual project page
+
+export function ProjectPage({title, image, category, tags, links={}}) {
+    const projectPageLinks = {}
+    const keys = ['demo', 'github', 'website']
+    for (let key of keys) {
+        if (links[key])
+            projectPageLinks[key] = links[key]
     }
-    return linksArray
+    
+    return ( 
+        <>
+            <h1>{title}</h1>
+            <h2 className={`${poppins200.className} ${projectCss.categoryText}`}>{category}</h2>
+            <div className={projectCss.tagContainerCentered}>
+                {tags.map((t, idx) => <Tag key={idx} name={t}/>)}
+            </div>
+            { image && <Image className={projectCss.mainImage} src={image} width={300} height={300} alt={title} /> }
+            <div className={projectCss.pageLinkContainer}>
+                {getLinkButtons(projectPageLinks)}
+            </div>
+        </>   
+    )
 }

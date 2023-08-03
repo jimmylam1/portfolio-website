@@ -1,6 +1,6 @@
 import { Roboto_Mono } from 'next/font/google'
 import projectCss from './projects.module.css'
-import Project from '@/components/project/Project'
+import { Project } from '@/components/project/Project'
 import projectsArray from '../../data/projects'
 
 const robotoMono600 = Roboto_Mono({ subsets: ['latin'], weight: '600'})

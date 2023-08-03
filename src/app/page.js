@@ -3,7 +3,7 @@ import { Poppins, Roboto_Mono } from 'next/font/google'
 import SkillIcon from '@/components/skillIcon/SkillIcon'
 import skills from '../data/skills'
 import projectsArray from '../data/projects'
-import Project from '@/components/project/Project'
+import { Project } from '@/components/project/Project'
 import Contact from '@/components/contact/Contact'
 import Link from 'next/link'
 

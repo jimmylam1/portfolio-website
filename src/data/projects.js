@@ -1,17 +1,18 @@
 
 const projects = [
     {
+        id: 0,
         title: 'Mario Kart Tour Discord Bots',
-        image: '/images/projects/mktbots.png',
+        image: '/images/projects/bots.png',
         category: 'Application',
-        tags: ['JavaScript', 'Node.js', 'MongoDB', 'Google Sheets API'],
+        tags: ['JavaScript', 'Node.js', 'MongoDB', 'Google Sheets API', 'Web Scraping', 'Child Processes', 'OCR'],
         bulletPoints: [
             'Centered around the game Mario Kart Tour',
             'Used by thousands of people',
             'Commands are optimized for speed',
             'Extensive use of image generation for the best User Experience',
         ],
-        pageUrl: '/',
+        pageUrl: '/projects/discordbots',
         links: {
             demo: null,
             github: null,
@@ -21,6 +22,26 @@ const projects = [
         isHighlight: true,
     },
     {
+        id: 1,
+        title: 'MKT Bots',
+        image: '/images/projects/mktbots.png',
+        category: 'Website',
+        tags: ['HTML', 'CSS', 'JavaScript'],
+        bulletPoints: [
+            'The documentation website for my Discord bots',
+            'Includes detailed descriptions for each command'
+        ],
+        pageUrl: '/projects/mktbots',
+        links: {
+            demo: null,
+            github: 'https://github.com/mktbots/mktbots.github.io',
+            website: 'https://mktbots.com',
+            video: null,
+        },
+        isHighlight: false,
+    },
+    {
+        id: 2,
         title: 'Mario Kart Central',
         image: '/images/projects/mkc.png',
         category: 'Website',
@@ -29,10 +50,10 @@ const projects = [
             'A central website for Mario Kart',
             'Manages many tournaments throughout the year',
             'Over 40,000 registered players',
-            'Currently being rewritten from the ground up with 14 developers',
+            'Currently being rewritten from the ground up',
             'The GitHub repository will be public once the new site is up and running'
         ],
-        pageUrl: '/',
+        pageUrl: '/projects/mkc',
         links: {
             demo: null,
             github: null,
@@ -42,6 +63,7 @@ const projects = [
         isHighlight: true,
     },
     {
+        id: 3,
         title: 'OpenGL Endless Runner Game',
         image: '/images/projects/opengl.png',
         category: 'Game',
@@ -51,7 +73,7 @@ const projects = [
             'Built with OpenGL and C++, without any game engines like Unity',
             'Figured out collision detection, repeating model objects, and keyboard input'
         ],
-        pageUrl: '/',
+        pageUrl: '/projects/opengl',
         links: {
             demo: null,
             github: 'https://github.com/jimmylam1/OpenGL-Game',
@@ -61,6 +83,7 @@ const projects = [
         isHighlight: true,
     },
     {
+        id: 4,
         title: 'Are We There Yet',
         image: '/images/projects/areWeThereYet.png',
         category: 'Game',
@@ -70,9 +93,9 @@ const projects = [
             'Built using the Unity game engine in collaboration with two other developers',
             'Responsible for the background music, sound effects, and level development'
         ],
-        pageUrl: '/',
+        pageUrl: '/projects/arewethereyet',
         links: {
-            demo: null, // TODO
+            demo: '/demo/arewethereyet',
             github: 'https://github.com/jimmylam1/Are-We-There-Yet',
             website: null,
             video: null,
@@ -80,44 +103,7 @@ const projects = [
         isHighlight: false,
     },
     {
-        title: 'Trivia',
-        image: '/images/projects/trivia.png',
-        category: 'Game',
-        tags: ['JavaScript', 'React', 'HTML', 'CSS'],
-        bulletPoints: [
-            'A game where the player must answer questions from a variety of different categories',
-            'The player is able to select both the category and difficulty for each question',
-            'Data is fetched from the Open Trivia Database API'
-        ],
-        pageUrl: '/',
-        links: {
-            demo: null,
-            github: 'https://github.com/jimmylam1/Trivia',
-            website: null,
-            video: null,
-        },
-        isHighlight: false,
-    },
-    {
-        title: 'AI Chess Game',
-        image: '/images/projects/chess.png',
-        category: 'Game',
-        tags: ['C', 'AI', 'Minimax'],
-        bulletPoints: [
-            'Collaborated with two other developers to build the game from scratch, without the use of any external libraries',
-            'Uses Minimax to create a decision tree in order to choose the best outcome',
-            'Includes socket programming to comunicate with remote client'
-        ],
-        pageUrl: '/',
-        links: {
-            demo: null,
-            github: 'https://github.com/jimmylam1/AI-Chess',
-            website: null,
-            video: null,
-        },
-        isHighlight: false,
-    },
-    {
+        id: 5,
         title: 'Visualization of Asteroid Impact',
         image: '/images/projects/asteroid.png',
         category: 'Scientific Visualization',
@@ -128,7 +114,7 @@ const projects = [
             'Wrote custom Python scripts to generate frames',
             'Used FFmpeg to convert frames into a video'
         ],
-        pageUrl: '/',
+        pageUrl: '/projects/asteroidimpact',
         links: {
             demo: null,
             github: null,
@@ -138,17 +124,18 @@ const projects = [
         isHighlight: false,
     },
     {
+        id: 6,
         title: '4x4 LED Cube',
         image: '/images/projects/cube.png',
         category: 'Electronics',
         tags: ['Python', 'Integrated Circuits', 'Simulation'],
         bulletPoints: [
             'Designed and built a 4x4 LED Cube along with the driver circuit',
-            'The driver circuit was made using only logic ICs including counters, D-type flip flops, EEPROM, multiplexers, demultiplexers, and shift registers',
+            'The driver circuit was made using only logic ICs',
             'Used Python to create the LED cube patterns, and wrote code to create a binary file for the EEPROM',
             'A simulation program was also created in Python to aid in the development and debugging processes'
         ],
-        pageUrl: '/',
+        pageUrl: '/projects/ledcube',
         links: {
             demo: null,
             github: 'https://github.com/jimmylam1/LED-Cube',
@@ -158,25 +145,67 @@ const projects = [
         isHighlight: false,
     },
     {
-        title: 'Brevet Time Calculator',
-        image: '/images/projects/brevet.png',
-        category: 'Application',
-        tags: ['Python', 'Flask', 'Javascript', 'HTML', 'CSS', 'MongoDB', 'Docker', 'REST APIs'],
+        id: 7,
+        title: 'Trivia',
+        image: '/images/projects/trivia.png',
+        category: 'Game',
+        tags: ['JavaScript', 'React', 'HTML', 'CSS'],
         bulletPoints: [
-            'A Full-Stack web application designed for a Brevet',
-            'A Brevet is a cycling event where participants must pass through multiple checkpoints within specific time ranges',
-            'The app allows people to enter the distances of each checkpoint from the start, and it will show the time range each checkpoint must be passed at',
+            'A game where the player must answer questions from a variety of different categories',
+            'The player is able to select both the category and difficulty for each question',
+            'Data is fetched from the Open Trivia Database API'
         ],
-        pageUrl: '/',
+        pageUrl: '/projects/trivia',
         links: {
-            demo: null,
-            github: 'https://github.com/jimmylam1/brevet-time-calculator',
+            demo: '/demo/trivia',
+            github: 'https://github.com/jimmylam1/Trivia',
             website: null,
             video: null,
         },
         isHighlight: false,
     },
     {
+        id: 8,
+        title: 'AI Chess Game',
+        image: '/images/projects/chess.png',
+        category: 'Game',
+        tags: ['C', 'AI', 'Minimax'],
+        bulletPoints: [
+            'Collaborated with two other developers to build the game from scratch, without the use of any external libraries',
+            'Uses Minimax to create a decision tree in order to choose the best outcome',
+            'Includes socket programming to comunicate with remote client'
+        ],
+        pageUrl: '/projects/aichess',
+        links: {
+            demo: null,
+            github: 'https://github.com/jimmylam1/AI-Chess',
+            website: null,
+            video: null,
+        },
+        isHighlight: false,
+    },
+    // {
+    //     id: 9,
+    //     title: 'Brevet Time Calculator',
+    //     image: '/images/projects/brevet.png',
+    //     category: 'Application',
+    //     tags: ['Python', 'Flask', 'Javascript', 'HTML', 'CSS', 'MongoDB', 'Docker', 'REST APIs'],
+    //     bulletPoints: [
+    //         'A Full-Stack web application designed for a Brevet',
+    //         'A Brevet is a cycling event where participants must pass through multiple checkpoints within specific time ranges',
+    //         'The app allows people to enter the distances of each checkpoint from the start, and it will show the time range each checkpoint must be passed at',
+    //     ],
+    //     pageUrl: '/',
+    //     links: {
+    //         demo: null,
+    //         github: 'https://github.com/jimmylam1/brevet-time-calculator',
+    //         website: null,
+    //         video: null,
+    //     },
+    //     isHighlight: false,
+    // },
+    {
+        id: 10,
         title: 'Monte Carlo Simulation of Ferromagnetism',
         image: '/images/projects/ising.png',
         category: 'Simulation',
@@ -186,7 +215,7 @@ const projects = [
             'Lattices vary on the number of neighbors each node (a magnetic dipole) is connected to',
             'The simulation overall gives insight to the critical temperature for each lattice, and this temperature is the point where a ferromagnet transitions from having a positive net magnetization to zero net magnetization.'
         ],
-        pageUrl: '/',
+        pageUrl: '/projects/isingmodel',
         links: {
             demo: null,
             github: 'https://github.com/jimmylam1/Ferromagnet-Simulation',
@@ -195,29 +224,25 @@ const projects = [
         },
         isHighlight: false,
     },
-    {
-        title: 'Bash Shell Clone',
-        image: '/images/projects/shell.png',
-        category: 'Application',
-        tags: ['C'],
-        bulletPoints: [
-            'Uses the C programming language to implement a Bash shell clone using system calls',
-            'Commands: ls, pwd, mkdir, cd, cp, mv, rm, cat'
-        ],
-        pageUrl: '/',
-        links: {
-            demo: null,
-            github: 'https://github.com/jimmylam1/Bash-Shell-Clone',
-            website: null,
-            video: null,
-        },
-        isHighlight: false,
-    },
+    // {
+    //     id: 11,
+    //     title: 'Bash Shell Clone',
+    //     image: '/images/projects/shell.png',
+    //     category: 'Application',
+    //     tags: ['C'],
+    //     bulletPoints: [
+    //         'Uses the C programming language to implement a Bash shell clone using system calls',
+    //         'Commands: ls, pwd, mkdir, cd, cp, mv, rm, cat'
+    //     ],
+    //     pageUrl: '/',
+    //     links: {
+    //         demo: null,
+    //         github: 'https://github.com/jimmylam1/Bash-Shell-Clone',
+    //         website: null,
+    //         video: null,
+    //     },
+    //     isHighlight: false,
+    // },
 ]
 
-const projectsWithIds = projects.map((i, idx) => ({
-    ...i,
-    id: idx
-}))
-
-export default projectsWithIds
+export default projects

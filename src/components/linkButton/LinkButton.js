@@ -5,7 +5,7 @@ import buttonCss from './LinkButton.module.css'
  */
 export default function LinkButton({name, linkUrl}) {
     const textLookup = {
-        demo: 'Try Demo',
+        demo: 'Live Demo',
         github: 'View GitHub',
         website: 'View Website',
         video: 'Watch Video'

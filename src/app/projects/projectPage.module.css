@@ -1,0 +1,87 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(38, 43, 62);
+    color: var(--text-color);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+    min-height: 100vh;
+    width: min(800px, 100vw);
+}
+.container h1 {
+    margin: 0;
+    padding-top: 100px;
+    text-align: center;
+    color: var(--text-color);
+    font-size: min(30px, 10vw);
+}
+.container .mainImage {
+    object-fit: contain;
+    width: min(600px, 90vw);
+    height: 100%;
+    margin-top: 50px;
+}
+
+.linkContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    gap: 10px;
+}
+
+.content {
+    align-self: flex-start;
+    margin: 20px 20px 50px 20px;
+    line-height: 1.3em;
+}
+.content > h2 {
+    margin-top: 40px;
+}
+.content a {
+    color: rgb(159, 178, 255);
+}
+
+.videoWrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    object-fit: contain;
+}
+
+.video {
+    width: min(560px, 90vw);
+    height: min(315px, calc(90vw * 9/16))
+}
+.videoLarge {
+    width: min(704px, 90vw);
+    height: min(396px, calc(90vw * 9/16));
+    padding-top: 40px;
+    padding-bottom: 0;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.galleryImage {
+    object-fit: contain;
+    width: min(700px, 90vw);
+    height: 100%;
+    margin-bottom: 50px;
+}
+.screenshot {
+    object-fit: contain;
+    width: min(700px, 90vw);
+    height: 100%;
+    margin: 20px 0;
+}
+
