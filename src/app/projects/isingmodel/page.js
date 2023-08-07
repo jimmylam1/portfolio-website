@@ -2,6 +2,7 @@ import projectsArray from '../../../data/projects'
 import pageCss from '../projectPage.module.css'
 import { ProjectPage } from '@/components/project/Project'
 import Image from 'next/image'
+import { Poppins } from "next/font/google";
 
 export default function DiscordBots() {
     const project = projectsArray.find(i => i.id === 10)

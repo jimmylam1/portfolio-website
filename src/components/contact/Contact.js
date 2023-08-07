@@ -1,58 +1,68 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import contactCss from './Contact.module.css'
+import Modal from '../modal/Modal';
 
 export default function Contact() {
-    const [formData, setFormData] = useState({from_name: '', email: '', message: ''})
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const form = useRef()
 
-    function handleChange(e) {
-        const { name, value } = e.target
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }))
+    const redModal = {
+        color: 'red',
+        header: 'There was a problem sending your message.',
+        content: 'If the problem persists, you can email me directly at jimmyportfolioemail@gmail.com',
+        handleClose: handleModalClose
     }
+    const greenModal = {
+        color: 'green',
+        header: 'Your message was successfully sent!',
+        content: '',
+        handleClose: handleModalClose
+    }
+
+    const [modalData, setModalData] = useState(null)
+    function handleModalClose() {
+        setModalData(null)
+    }
+
     function handleSubmit(e) {
-        if (!formData.from_name) 
-            return alert('The name field cannot be empty')
-        if (!formData.email)
-            return alert('The email field cannot be empty')
-        if (!formData.email.includes("@"))
-            return alert('The provided email is invalid')
-        if (!formData.message)
-            return alert('The message field cannot be empty')
-
         e.preventDefault();
+        if (isSubmitting)
+            return
+        setIsSubmitting(true)
 
-        emailjs.send('service_562q4uf', 'template_o8qaj0m', formData, 'rnUqyoR85XbIzJaWP')
+        emailjs.sendForm('service_562q4uf', 'template_o8qaj0m', form.current, 'rnUqyoR85XbIzJaWP')
             .then((result) => {
-                alert('Your message has been successfully sent!')
-                console.log(result)
-            }, (error) => {
-                alert('There was a problem sending the your message')
-                console.log(error)
+                setIsSubmitting(false)
+                setModalData(greenModal)
+                e.target.reset()
+            })
+            .catch((error) => {
+                setIsSubmitting(false)
+                setModalData(redModal)
             });
-        
-        setFormData({from_name: '', email: '', message: ''})
     }
 
     return (
-        <div className={contactCss.form}>
-            <div className={contactCss.inputContainer}>
-                <label htmlFor='name'>Name:</label>
-                <input id='name' type="text" placeholder='Name' name="from_name" value={formData.from_name} onChange={handleChange} required/>
-            </div>
-            <div className={contactCss.inputContainer}>
-                <label htmlFor='email'>Email:</label>
-                <input id='email' type="email" placeholder='Email' name="email" value={formData.email} onChange={handleChange} required/>
-            </div>
-            <div className={contactCss.textareaContainer}>
-                <label className={contactCss.textareaLabel} htmlFor='message'>Message:</label>
-                <textarea id='message' placeholder='Message' name="message" value={formData.message} onChange={handleChange} required/>
-            </div>
-            <button className={contactCss.submit} onClick={handleSubmit}>Submit</button>            
-        </div>
+        <>
+            <form ref={form} onSubmit={handleSubmit} className={contactCss.form}>
+                <div className={contactCss.inputContainer}>
+                    <label htmlFor='name'>Name</label>
+                    <input id='name' type="text" placeholder='Enter your name' name="from_name" required/>
+                </div>
+                <div className={contactCss.inputContainer}>
+                    <label htmlFor='email'>Email</label>
+                    <input id='email' type="email" placeholder='Enter your email address' name="email" required/>
+                </div>
+                <div className={contactCss.inputContainer}>
+                    <label htmlFor='message'>Message</label>
+                    <textarea id='message' placeholder='Enter your message' name="message" required/>
+                </div>
+                <button className={isSubmitting ? contactCss.submitting : contactCss.submit} type='submit'>{isSubmitting ? 'Submitting...' : 'Submit'}</button>
+            </form>
+            {modalData && <Modal {...modalData}/>}
+        </>
     );
 };

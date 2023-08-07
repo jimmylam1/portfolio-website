@@ -1,16 +1,19 @@
 .container {
     display: flex;
     padding: 10px 20px;
-    background-color: rgb(209, 255, 255);
-    color: black;
+    background-color: var(--button-bg-color);
+    color: var(--text-color);
+    border: 2px solid rgb(209, 255, 255);
     border-radius: 5px;
     text-decoration: none;
 }
 .container:hover {
     cursor: pointer;
+    background-color: rgb(209, 255, 255);
+    color: black;
 }
 
-.demo {
+/* .demo {
 
 }
 .github {
@@ -21,4 +24,4 @@
 }
 .video {
 
-}
+} */

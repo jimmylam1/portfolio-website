@@ -2,63 +2,53 @@
 
 import Image from "next/image";
 import Link from 'next/link';
+import LinkButton from "@/components/linkButton/LinkButton"
 import Tag from "../tag/Tag";
 import projectCss from './Project.module.css'
-import { Poppins } from "next/font/google";
+import animations from '../animations.module.css'
 import useWindowSize from "@/hooks/useWindowSize";
-import getLinkButtons from "@/scripts/getLinkButtons";
+import { useRef } from "react";
+import { useViewport } from "@/hooks/useViewport";
 
-const poppins400 = Poppins({ subsets: ['latin'], weight: "400" })
-const poppins200 = Poppins({ subsets: ['latin'], weight: "200" })
-const poppins300 = Poppins({ subsets: ['latin'], weight: "300" })
-
-export function Project({title, image, category, tags, bulletPoints, pageUrl, links}) {
-    const windowSize = useWindowSize()
+export function Project({title, image, category, tags, bulletPoints, pageUrl, links, showHr=true}) {
+    const windowSize = useWindowSize()    
     if (windowSize.width > 1100) {
-        return desktopLayout({title, image, category, tags, bulletPoints, pageUrl, links})
+        return DesktopLayout({title, image, category, tags, bulletPoints, pageUrl, links, showHr})
     }
-    return mobileLayout({title, image, category, tags, bulletPoints, pageUrl, links})
+    return MobileLayout({title, image, category, tags, bulletPoints, pageUrl, links, showHr})
+}
+
+function getLinkButtons(links) {
+    let linksArray = []
+    for (let key of Object.keys(links)) {
+        if (links[key]) {
+            linksArray.push(<LinkButton name={key} linkUrl={links[key]} />)
+        }
+    }
+    return linksArray
 }
 
 // ------------------------------------------------------------------------------------------
 // list all projects
 
-function desktopLayout({title, image, category, tags, bulletPoints, pageUrl, links}) {
-    return (
-        <div className={projectCss.desktopContainer}>
-            <div className={projectCss.textContainer}>
-                <h1 className={poppins400.className}>{title}</h1>
-                <h2 className={poppins200.className}>{category}</h2>
-                <div className={projectCss.tagContainer}>
-                    {tags.map((t, idx) => <Tag key={idx} name={t}/>)}
-                </div>
-                <ul className={poppins300.className}>
-                    {bulletPoints.map((b, idx) => <li key={idx}>{b}</li>)}
-                </ul>
-                <Link className={projectCss.pageLink} href={pageUrl}>View More Detail</Link>
-                <div className={projectCss.linkContainer}>
-                    {getLinkButtons(links)}
-                </div>
-            </div>
-            <Image className={projectCss.image} src={image} width={200} height={200} alt={title}/>
-        </div>
-    )
-}
+function DesktopLayout({title, image, category, tags, bulletPoints, pageUrl, links, showHr}) {
+    const triggerRef = useRef(null)
+    const { viewed } = useViewport(triggerRef, 0.1)
 
-function mobileLayout({title, image, category, tags, bulletPoints, pageUrl, links}) {
+    const textCss = `${projectCss.textContainer} ${viewed ? animations.animateLtoR : animations.hidden}`
+    const imgCss = `${projectCss.image} ${viewed ? animations.animateRtoL : animations.hidden}`
+    const hrCss = `${projectCss.hr} ${viewed ? animations.animateFadeIn : animations.hidden}`
+
     return (
-        <div className={projectCss.mobileWrapper}>
-            <div className={projectCss.mobileContainer}>
-                <div className={projectCss.textContainer}>
-                    <h1 className={poppins400.className}>{title}</h1>
-                    <h2 className={poppins200.className}>{category}</h2>
+        <>
+            <div ref={triggerRef} className={projectCss.desktopContainer}>
+                <div className={textCss}>
+                    <h1>{title}</h1>
+                    <h2>{category}</h2>
                     <div className={projectCss.tagContainer}>
                         {tags.map((t, idx) => <Tag key={idx} name={t}/>)}
                     </div>
-                </div>
-                <Image className={projectCss.image} src={image} width={200} height={200} alt={title}/>
-                <div className={projectCss.textContainer}>
-                    <ul className={poppins300.className}>
+                    <ul>
                         {bulletPoints.map((b, idx) => <li key={idx}>{b}</li>)}
                     </ul>
                     <Link className={projectCss.pageLink} href={pageUrl}>View More Detail</Link>
@@ -66,8 +56,45 @@ function mobileLayout({title, image, category, tags, bulletPoints, pageUrl, link
                         {getLinkButtons(links)}
                     </div>
                 </div>
+                <Image className={imgCss} src={image} width={200} height={200} alt={title}/>
             </div>
-        </div>
+            {showHr && <hr className={hrCss}/>}
+        </>
+    )
+}
+
+function MobileLayout({title, image, category, tags, bulletPoints, pageUrl, links, showHr}) {
+    const triggerRef = useRef(null)
+    const { viewed } = useViewport(triggerRef, 0.1)
+
+    const containerCss = `${projectCss.mobileContainer} ${viewed ? animations.animateRtoL : animations.hidden}`
+    const hrCss = `${projectCss.hr} ${viewed ? animations.animateFadeIn : animations.hidden}`
+
+    return (
+        <>
+            <div ref={triggerRef} className={projectCss.mobileWrapper}>
+                <div className={containerCss}>
+                    <div className={projectCss.textContainer}>
+                        <h1>{title}</h1>
+                        <h2>{category}</h2>
+                        <div className={projectCss.tagContainer}>
+                            {tags.map((t, idx) => <Tag key={idx} name={t}/>)}
+                        </div>
+                    </div>
+                    <Image className={projectCss.image} src={image} width={200} height={200} alt={title}/>
+                    <div className={projectCss.textContainer}>
+                        <ul>
+                            {bulletPoints.map((b, idx) => <li key={idx}>{b}</li>)}
+                        </ul>
+                        <Link className={projectCss.pageLink} href={pageUrl}>View More Detail</Link>
+                        <div className={projectCss.linkContainer}>
+                            {getLinkButtons(links)}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {showHr && <hr className={hrCss}/>}
+        </>
     )
 }
 
@@ -75,24 +102,24 @@ function mobileLayout({title, image, category, tags, bulletPoints, pageUrl, link
 // for individual project page
 
 export function ProjectPage({title, image, category, tags, links={}}) {
-    const projectPageLinks = {}
-    const keys = ['demo', 'github', 'website']
-    for (let key of keys) {
-        if (links[key])
-            projectPageLinks[key] = links[key]
-    }
+    const {demo, github, website} = links
+    const projectPageLinks = {demo, github, website} // no video
     
     return ( 
         <>
-            <h1>{title}</h1>
-            <h2 className={`${poppins200.className} ${projectCss.categoryText}`}>{category}</h2>
-            <div className={projectCss.tagContainerCentered}>
-                {tags.map((t, idx) => <Tag key={idx} name={t}/>)}
+            <div className={projectCss.textContainer}>
+                <h1>{title}</h1>
+                <h2 className={projectCss.categoryText}>{category}</h2>
+                <div className={projectCss.tagContainerCentered}>
+                    {tags.map((t, idx) => <Tag key={idx} name={t}/>)}
+                </div>
             </div>
-            { image && <Image className={projectCss.mainImage} src={image} width={300} height={300} alt={title} /> }
-            <div className={projectCss.pageLinkContainer}>
-                {getLinkButtons(projectPageLinks)}
-            </div>
-        </>   
+            {image && <Image className={projectCss.mainImage} src={image} width={300} height={300} alt={title} />}
+            <div className={projectCss.textContainer}>
+                <div className={projectCss.pageLinkContainer}>
+                    {getLinkButtons(projectPageLinks)}
+                </div>
+            </div>   
+        </>
     )
 }

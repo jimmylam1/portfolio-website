@@ -4,13 +4,17 @@ body {
 
 :root {
     /* --background-color: #005073; */
-    --background-color: white;
-    --nav-bg-color: rgb(13, 14, 17);
+    --background-color: rgb(38, 44, 62);
+    --nav-bg-color: rgb(38, 44, 62);
+    --button-bg-color: rgb(27, 31, 44);
     --text-color: white;
+    --cursor-blink-color: rgb(193, 193, 193);
 }
 
 .dark-mode {
-    --background-color: black;
+    --background-color: rgb(38, 44, 62);
+    --nav-bg-color: rgb(38, 44, 62);
+    --button-bg-color: rgb(27, 31, 44);
     --text-color: white;
-    --nav-bg-color: rgb(13, 14, 17);
+    --cursor-blink-color: rgb(193, 193, 193);
 }

@@ -1,0 +1,41 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    font-family: var(--font-roboto-mono);
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-color);
+    border-right: 2px solid var(--cursor-blink-color);
+}
+.blink {
+    animation: myblink 1s infinite;
+}
+.noBlink {
+    border-right: none;
+}
+.h2 {
+    min-height: 30px;
+    font-size: 30px !important;
+}
+.h4 {
+    min-height: 30px;
+    font-size: 22px !important;
+}
+
+.cursor {
+    width: 2px;
+    background-color: var(--cursor-blink-color);
+    animation: myblink 1s infinite;
+}
+
+@keyframes myblink {
+    0%, 49% {
+        border-color: var(--cursor-blink-color);
+    }
+    50%, 100% {
+        border-color: transparent;
+    }
+}

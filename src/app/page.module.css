@@ -16,7 +16,7 @@
 }
 .hero > h1 {
     font-size: min(100px, 10vw);
-    margin-bottom: 0;
+    margin-bottom: 20px;
 }
 .hero > h4 {
     font-size: min(22px, 7vw);
@@ -44,38 +44,10 @@
     height: 100%;
 }
 
-.skills > h2 {
-    margin: 0;
-    padding-top: 30px;
-    text-align: center;
-    color: var(--text-color);
-    font-size: min(30px, 10vw);
-}
-.iconContainer {
-    display: grid;
-    grid-template-areas: "a a a a";
-    gap: 30px;
-    justify-content: center;
-    margin-top: 100px;
-}
-
-@media only screen and (min-width: 601px) and (max-width: 700px) {
-    .iconContainer {
-        grid-template-areas: "a a a";
-    }
-}
-@media only screen and (max-width: 600px) {
-    .iconContainer {
-        grid-template-areas: "a a a";
-        gap: 15px;
-    }
-}
-
 .projects {
     display: flex;
     flex-direction: column;
-    background-color: rgb(38, 44, 62);
-    padding-bottom: 50px;
+    background-color: var(--background-color);
 }
 .projects > h2 {
     margin: 0;
@@ -89,24 +61,27 @@
     color: var(--text-color);
     text-align: center;
     padding: 10px 20px;
-    margin: 20px auto;
-    background-color: rgb(27, 31, 44);
+    margin: 40px auto 50px auto;
+    background-color: var(--button-bg-color);
     /* border: 2px solid var(--text-color); */
     border: 2px solid rgb(255, 156, 90);
     border-radius: 5px;
     text-decoration: none;
 }
 .allProjectsBtn:hover {
-    background-color: rgb(56, 64, 91);
+    background-color: rgb(255, 156, 90);
+    color: black;
 }
 
 .contact {
-    padding: 75px;
+    padding: 0 75px 75px 75px;
     background-color: #00344B;
 }
 .contact > h2 {
     text-align: center;
     color: var(--text-color);
     font-size: min(30px, 10vw);
+    padding-top: 20px;
     padding-bottom: 70px;
+    margin-top: -2px;
 }

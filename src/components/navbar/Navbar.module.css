@@ -6,7 +6,7 @@
     align-items: center;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
     width: 100vw;
-    position: fixed;
+    position: absolute;
 }
 .nav > ul {
     display: flex;
@@ -30,9 +30,11 @@
 .icon {
     object-fit: contain;
     width: 100%;
-    width: 40px;
-    height: 40px;
-    box-shadow: 0 0 5px white;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     vertical-align: middle;
+}
+.icon:hover {
+    box-shadow: 0 0 5px white;
 }

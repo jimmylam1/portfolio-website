@@ -1,11 +1,11 @@
 import pageStyle from './page.module.css'
 import { Poppins, Roboto_Mono } from 'next/font/google'
-import SkillIcon from '@/components/skillIcon/SkillIcon'
-import skills from '../data/skills'
 import projectsArray from '../data/projects'
 import { Project } from '@/components/project/Project'
 import Contact from '@/components/contact/Contact'
 import Link from 'next/link'
+import Skills from '@/components/skills/Skills'
+import TypingHeader from '@/components/typingHeader/TypingHeader'
 
 const poppins600 = Poppins({ subsets: ['latin'], weight: "600" })
 const robotoMono600 = Roboto_Mono({ subsets: ['latin'], weight: '600'})
@@ -15,29 +15,29 @@ export const metadata = {
 }
 
 export default function Home() {
-    const skillsArray = getSkills()
-
     return (
         <div className={pageStyle.container}>
 
             <div className={pageStyle.heroContainer}>
                 <div className={pageStyle.hero}>
                     <h1 className={poppins600.className}>JIMMY LAM</h1>
-                    <h4 className={robotoMono600.className}>Software Engineer</h4>
+                    <TypingHeader header={'h4'} textInArray={['Soft', 'ware', ' ', 'En', 'gin', 'eer']} delayMs={1000} />
                 </div>
                 <div className={pageStyle.skillsWave1}></div>
             </div>
 
             <div className={pageStyle.skills}>
-                <h2 className={robotoMono600.className}>Skills</h2>
-                <div className={pageStyle.iconContainer}>
-                    {skillsArray}
+                <div style={{'padding-top': '50px'}}>
+                    <TypingHeader header={'h2'} textInArray={['Sk', 'ills']} delayMs={250} />
                 </div>
+                <Skills />
             </div>
 
             <div className={pageStyle.projects}>
                 <div className={pageStyle.skillsWave2}></div>
-                <h2 className={robotoMono600.className}>Highlighted Projects</h2>
+                <div style={{'padding-top': '100px', 'padding-bottom': '50px'}}>
+                    <TypingHeader header={'h2'} textInArray={['High', 'light', 'ed', ' ', 'Pro', 'jects']} delayMs={250} />
+                </div>
                 {projectsArray.filter(p => p.isHighlight).map((p, idx) => (
                     <Project     
                         key={idx}
@@ -51,16 +51,15 @@ export default function Home() {
                     />
                 ))}
                 <Link className={pageStyle.allProjectsBtn} href='/projects'>View All Projects</Link>
+                <div className={pageStyle.skillsWave1}></div>
             </div>
             
             <div className={pageStyle.contact}>
-                <h2 className={robotoMono600.className}>Contact</h2>
+                <div style={{'padding-top': '50px', 'padding-bottom': '100px'}}>
+                    <TypingHeader header={'h2'} textInArray={['Con', 'tact']} delayMs={250}/>
+                </div>
                 <Contact />
             </div>
         </div>
     );
-}
-
-function getSkills() {
-    return skills.map(s => <SkillIcon key={s.id} imgPath={s.path} name={s.name}/>)
 }

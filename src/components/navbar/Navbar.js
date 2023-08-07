@@ -7,7 +7,6 @@ export default function Navbar() {
         <ul>
             <li><Link className={navCss.link} href='/'>Home</Link> </li>
             <li><Link className={navCss.link} href='/projects'>Projects</Link> </li>
-            {/* <li><Link className={navCss.link} href='/about'>About</Link></li> */}
         </ul>
         <div className={navCss.linksContainer}>
             <a href='https://github.com/jimmylam1' target='_blank'>

@@ -16,6 +16,8 @@
     font-size: 1em;
     color: var(--text-color);
     margin-top: 10px;
+    font-family: var(--font-roboto-mono);
+    font-weight: 400;
 }
 
 @media only screen and (max-width: 600px) {
@@ -26,5 +28,25 @@
     .container img {
         max-width: 50px;
         max-height: 50px;
+    }
+}
+
+.iconContainer {
+    display: grid;
+    grid-template-areas: "a a a a";
+    gap: 30px;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+@media only screen and (min-width: 601px) and (max-width: 700px) {
+    .iconContainer {
+        grid-template-areas: "a a a";
+    }
+}
+@media only screen and (max-width: 600px) {
+    .iconContainer {
+        grid-template-areas: "a a a";
+        gap: 15px;
     }
 }

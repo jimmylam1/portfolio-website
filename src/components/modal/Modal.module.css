@@ -1,0 +1,77 @@
+.container {
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+}
+.background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.5s;
+}
+.hideBackground {
+    animation: fadeOut 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+@keyframes floatUp {
+    from {transform: translateY(30px);}
+    to {transform: translateY(0px);}
+}
+@keyframes floatDown {
+    from {transform: translateY(0px);}
+    to {transform: translateY(30px);}
+}
+
+.main {
+    padding: 10px 30px 30px 30px;
+    margin: 0 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: 10px;
+    font-family: var(--font-roboto);
+    box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.5);
+    animation: floatUp 0.5s;
+}
+.hideMain {
+    animation: floatDown 0.5s;
+}
+.greenEdge {
+    border-left: 5px solid greenyellow;
+    border-radius: 5px;
+}
+.redEdge {
+    border-left: 5px solid rgb(255, 59, 59);
+    border-radius: 5px;
+}
+
+.buttonWrapper {
+    display: flex;
+    justify-content: center;
+}
+.main button {
+    padding: 6px 15px;
+    margin-top: 20px;
+    border: 2px solid white;
+    border-radius: 4px;
+    background-color: var(--button-bg-color);
+    color: var(--text-color);
+    font-family: var(--font-roboto);
+}
+.main button:hover {
+    cursor: pointer;
+    background-color: var(--text-color);
+    color: var(--background-color);
+}

@@ -5,6 +5,18 @@
     background-color: rgb(38, 43, 62);
     color: var(--text-color);
 }
+
+@keyframes floatUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -12,6 +24,7 @@
     padding-bottom: 50px;
     min-height: 100vh;
     width: min(800px, 100vw);
+    animation: floatUp 0.7s;
 }
 .container h1 {
     margin: 0;
@@ -43,7 +56,13 @@
     line-height: 1.3em;
 }
 .content > h2 {
-    margin-top: 40px;
+    margin-top: 60px;
+    font-size: 30px;
+    font-weight: 500;
+}
+.content > p {
+    line-height: 1.5;
+    font-size: 17px;
 }
 .content a {
     color: rgb(159, 178, 255);

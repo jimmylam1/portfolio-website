@@ -1,5 +1,5 @@
 .projects {
-    background-color: rgb(27, 31, 44);
+    background-color: var(--background-color);
     padding-bottom: 50px;
 }
 .projects > h2 {

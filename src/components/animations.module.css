@@ -1,0 +1,30 @@
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes floatUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0px); opacity: 1;}
+}
+@keyframes floatLtoR {
+    from { transform: translateX(-30px); opacity: 0; }
+    to { transform: translateX(0px); opacity: 1;}
+}
+@keyframes floatRtoL {
+    from { transform: translateX(30px); opacity: 0; }
+    to { transform: translateX(0px); opacity: 1;}
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.animateFadeIn {
+    animation: fadeIn 0.7s;
+}
+.animateLtoR {
+    animation: floatLtoR 0.7s;
+}
+.animateRtoL {
+    animation: floatRtoL 0.7s;
+}
