@@ -15,9 +15,15 @@
     text-align: center;
 }
 .hero > h1 {
-    font-size: min(100px, 10vw);
+    font-size: min(100px, 14vw);
     margin-bottom: 20px;
+    animation: floatUp 1s;
 }
+@keyframes floatUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0px); opacity: 1;}
+}
+
 .hero > h4 {
     font-size: min(22px, 7vw);
     margin-top: 0;

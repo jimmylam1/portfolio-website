@@ -1,5 +1,5 @@
 import pageStyle from './page.module.css'
-import { Poppins, Roboto_Mono } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import projectsArray from '../data/projects'
 import { Project } from '@/components/project/Project'
 import Contact from '@/components/contact/Contact'
@@ -8,11 +8,6 @@ import Skills from '@/components/skills/Skills'
 import TypingHeader from '@/components/typingHeader/TypingHeader'
 
 const poppins600 = Poppins({ subsets: ['latin'], weight: "600" })
-const robotoMono600 = Roboto_Mono({ subsets: ['latin'], weight: '600'})
-
-export const metadata = {
-    title: 'Jimmy Lam',
-}
 
 export default function Home() {
     return (
