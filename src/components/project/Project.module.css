@@ -29,10 +29,17 @@
     flex-direction: column;
     width: min(500px, 90vw);
 }
-.textContainer > h1 {
+.headerWrapper {
+    display: flex;
+}
+.textContainer h1 {
     margin: 0;
     font-size: 28px;
     font-weight: 500;
+    color: var(--text-color);
+}
+.noLinkUnderline {
+    text-decoration: none;
 }
 .textContainer > h2 {
     font-size: 20px;
@@ -78,6 +85,10 @@
     align-content: center;
     flex-wrap: wrap;
     gap: 10px
+}
+
+.imageWrapper {
+    width: min(600px, 90vw);
 }
 
 .image {

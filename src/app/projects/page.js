@@ -8,7 +8,7 @@ export default function Projects() {
     return (
         <div className={projectCss.projects}>
             <div style={{'padding-top': '120px', 'padding-bottom': '50px'}}>
-                <TypingHeader header={'h2'} textInArray={['All', ' ', 'Pro', 'jects']} delayMs={250} />
+                <TypingHeader header={'h2'} textInArray={['All ', 'Pro', 'jects']} delayMs={250} />
             </div>
             {projectsArray.map((p, idx) => (
                 <Project     

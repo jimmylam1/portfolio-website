@@ -43,7 +43,9 @@ function DesktopLayout({title, image, category, tags, bulletPoints, pageUrl, lin
         <>
             <div ref={triggerRef} className={projectCss.desktopContainer}>
                 <div className={textCss}>
-                    <h1>{title}</h1>
+                    <div className={projectCss.headerWrapper}>
+                        <Link className={projectCss.noLinkUnderline} href={pageUrl}><h1>{title}</h1></Link>
+                    </div>
                     <h2>{category}</h2>
                     <div className={projectCss.tagContainer}>
                         {tags.map((t, idx) => <Tag key={idx} name={t}/>)}
@@ -56,7 +58,9 @@ function DesktopLayout({title, image, category, tags, bulletPoints, pageUrl, lin
                         {getLinkButtons(links)}
                     </div>
                 </div>
-                <Image className={imgCss} src={image} width={200} height={200} alt={title}/>
+                <Link className={projectCss.imageWrapper} href={pageUrl}>
+                    <Image className={imgCss} src={image} width={200} height={200} alt={title}/>
+                </Link>
             </div>
             {showHr && <hr className={hrCss}/>}
         </>
@@ -75,13 +79,17 @@ function MobileLayout({title, image, category, tags, bulletPoints, pageUrl, link
             <div ref={triggerRef} className={projectCss.mobileWrapper}>
                 <div className={containerCss}>
                     <div className={projectCss.textContainer}>
-                        <h1>{title}</h1>
+                        <div className={projectCss.headerWrapper}>
+                            <Link className={projectCss.noLinkUnderline} href={pageUrl}><h1>{title}</h1></Link>
+                        </div>
                         <h2>{category}</h2>
                         <div className={projectCss.tagContainer}>
                             {tags.map((t, idx) => <Tag key={idx} name={t}/>)}
                         </div>
                     </div>
-                    <Image className={projectCss.image} src={image} width={200} height={200} alt={title}/>
+                    <Link href={pageUrl}>
+                        <Image className={projectCss.image} src={image} width={200} height={200} alt={title}/>
+                    </Link>
                     <div className={projectCss.textContainer}>
                         <ul>
                             {bulletPoints.map((b, idx) => <li key={idx}>{b}</li>)}
