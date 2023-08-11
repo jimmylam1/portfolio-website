@@ -22,7 +22,7 @@
 }
 
 .form input {
-    width: min(450px, 90vw);
+    width: min(450px, 92vw);
     height: 30px;
     padding-left: 10px;
     margin-top: 5px;
@@ -33,7 +33,7 @@
 }
 
 .form textarea {
-    width: min(450px, 90vw);
+    width: min(450px, 92vw);
     height: 150px;
     padding-left: 10px;
     padding-top: 10px;

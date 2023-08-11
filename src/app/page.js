@@ -1,57 +1,38 @@
 import pageStyle from './page.module.css'
-import { Poppins } from 'next/font/google'
-import projectsArray from '../data/projects'
-import { Project } from '@/components/project/Project'
 import Contact from '@/components/contact/Contact'
-import Link from 'next/link'
 import Skills from '@/components/skills/Skills'
 import TypingHeader from '@/components/typingHeader/TypingHeader'
-
-const poppins600 = Poppins({ subsets: ['latin'], weight: "600" })
+import Hero from '@/components/hero/Hero'
+import ProjectList from '@/components/projectList/ProjectList'
 
 export default function Home() {
     return (
         <div className={pageStyle.container}>
 
-            <div className={pageStyle.heroContainer}>
+            <Hero>
                 <div className={pageStyle.hero}>
-                    <h1 className={poppins600.className}>JIMMY LAM</h1>
-                    <TypingHeader header={'h4'} textInArray={['Soft', 'ware', ' ', 'En', 'gin', 'eer']} delayMs={1000} />
+                    <h1>JIMMY LAM</h1>
+                    <TypingHeader header={'h4'} textInArray={['Software ', 'Engineer']} delayMs={1000} delayCharMs={100} shadow/>
                 </div>
                 <div className={pageStyle.skillsWave1}></div>
-            </div>
+            </Hero>
 
             <div className={pageStyle.skills}>
-                <div style={{'padding-top': '50px'}}>
-                    <TypingHeader header={'h2'} textInArray={['Sk', 'ills']} delayMs={250} />
+                <div style={{'paddingTop': '50px'}}>
+                    <TypingHeader header={'h2'} textInArray={['Skills']} delayCharMs={85} delayMs={250} />
                 </div>
                 <Skills />
             </div>
 
             <div className={pageStyle.projects}>
                 <div className={pageStyle.skillsWave2}></div>
-                <div style={{'padding-top': '100px', 'padding-bottom': '50px'}}>
-                    <TypingHeader header={'h2'} textInArray={['High', 'light', 'ed', ' ', 'Pro', 'jects']} delayMs={250} />
-                </div>
-                {projectsArray.filter(p => p.isHighlight).map((p, idx) => (
-                    <Project     
-                        key={idx}
-                        title={p.title}
-                        image={p.image}
-                        category={p.category}
-                        tags={p.tags}
-                        bulletPoints={p.bulletPoints}
-                        pageUrl={p.pageUrl}
-                        links={p.links}
-                    />
-                ))}
-                <Link className={pageStyle.allProjectsBtn} href='/projects'>View All Projects</Link>
+                <ProjectList headerTextArray={['Highlighted ', 'Projects']} onlyHighlight/>
                 <div className={pageStyle.skillsWave1}></div>
             </div>
             
             <div className={pageStyle.contact}>
-                <div style={{'padding-top': '50px', 'padding-bottom': '100px'}}>
-                    <TypingHeader header={'h2'} textInArray={['Con', 'tact']} delayMs={250}/>
+                <div style={{'paddingTop': '50px', 'paddingBottom': '100px'}}>
+                    <TypingHeader header={'h2'} textInArray={['Con', 'tact']} delayCharMs={75} delayMs={250}/>
                 </div>
                 <Contact />
             </div>

@@ -28,3 +28,6 @@
 .animateRtoL {
     animation: floatRtoL 0.7s;
 }
+.animateFloatUp {
+    animation: floatUp 0.7s;
+}

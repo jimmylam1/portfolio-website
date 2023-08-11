@@ -9,20 +9,28 @@ import animations from '../animations.module.css'
 import useWindowSize from "@/hooks/useWindowSize";
 import { useRef } from "react";
 import { useViewport } from "@/hooks/useViewport";
+import useEffectNoInitialMount from "@/hooks/useEffectNoInitialMount";
 
-export function Project({title, image, category, tags, bulletPoints, pageUrl, links, showHr=true}) {
+export function Project({title, image, category, tags, bulletPoints, pageUrl, links, setProjectViewed, showHr=true, canStart=true}) {
+    const triggerRef = useRef(null)
+    const { viewed } = useViewport(triggerRef, 0.2)
+
+    useEffectNoInitialMount(() => {
+        setProjectViewed()
+    }, [viewed])
+
     const windowSize = useWindowSize()    
     if (windowSize.width > 1100) {
-        return DesktopLayout({title, image, category, tags, bulletPoints, pageUrl, links, showHr})
+        return DesktopLayout({title, image, category, tags, bulletPoints, pageUrl, links, showHr, triggerRef, viewed, canStart})
     }
-    return MobileLayout({title, image, category, tags, bulletPoints, pageUrl, links, showHr})
+    return MobileLayout({title, image, category, tags, bulletPoints, pageUrl, links, showHr, triggerRef, viewed, canStart})
 }
 
 function getLinkButtons(links) {
     let linksArray = []
     for (let key of Object.keys(links)) {
         if (links[key]) {
-            linksArray.push(<LinkButton name={key} linkUrl={links[key]} />)
+            linksArray.push(<LinkButton key={key} name={key} linkUrl={links[key]} />)
         }
     }
     return linksArray
@@ -31,13 +39,11 @@ function getLinkButtons(links) {
 // ------------------------------------------------------------------------------------------
 // list all projects
 
-function DesktopLayout({title, image, category, tags, bulletPoints, pageUrl, links, showHr}) {
-    const triggerRef = useRef(null)
-    const { viewed } = useViewport(triggerRef, 0.1)
-
-    const textCss = `${projectCss.textContainer} ${viewed ? animations.animateLtoR : animations.hidden}`
-    const imgCss = `${projectCss.image} ${viewed ? animations.animateRtoL : animations.hidden}`
-    const hrCss = `${projectCss.hr} ${viewed ? animations.animateFadeIn : animations.hidden}`
+function DesktopLayout({title, image, category, tags, bulletPoints, pageUrl, links, showHr, triggerRef, viewed, canStart}) {
+    const show = viewed && canStart
+    const textCss = `${projectCss.textContainer} ${show ? animations.animateLtoR : animations.hidden}`
+    const imgCss = `${projectCss.image} ${show ? animations.animateRtoL : animations.hidden}`
+    const hrCss = `${projectCss.hr} ${show ? animations.animateFadeIn : animations.hidden}`
 
     return (
         <>
@@ -67,12 +73,10 @@ function DesktopLayout({title, image, category, tags, bulletPoints, pageUrl, lin
     )
 }
 
-function MobileLayout({title, image, category, tags, bulletPoints, pageUrl, links, showHr}) {
-    const triggerRef = useRef(null)
-    const { viewed } = useViewport(triggerRef, 0.1)
-
-    const containerCss = `${projectCss.mobileContainer} ${viewed ? animations.animateRtoL : animations.hidden}`
-    const hrCss = `${projectCss.hr} ${viewed ? animations.animateFadeIn : animations.hidden}`
+function MobileLayout({title, image, category, tags, bulletPoints, pageUrl, links, showHr, triggerRef, viewed, canStart}) {
+    const show = viewed && canStart
+    const containerCss = `${projectCss.mobileContainer} ${show ? animations.animateRtoL : animations.hidden}`
+    const hrCss = `${projectCss.hr} ${show ? animations.animateFadeIn : animations.hidden}`
 
     return (
         <>

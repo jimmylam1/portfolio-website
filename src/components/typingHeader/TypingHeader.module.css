@@ -10,6 +10,9 @@
     color: var(--text-color);
     border-right: 2px solid var(--cursor-blink-color);
 }
+.shadow {
+    text-shadow: 0 0 50px black;
+}
 .blink {
     animation: myblink 1s infinite;
 }

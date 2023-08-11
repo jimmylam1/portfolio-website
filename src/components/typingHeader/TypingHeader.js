@@ -6,13 +6,13 @@ import textStyle from './TypingHeader.module.css'
 import { useViewport } from "@/hooks/useViewport"
 
 
-export default function TypingHeader({header, textInArray, delayMs=0}) {
+export default function TypingHeader({header, textInArray, delayMs=0, delayCharMs=65, delayWordMs=50, shadow=false}) {
     const [text, setText] = useState("")
     const [hasStarted, setHasStarted] = useState(false)
     const [isTyping, setIsTyping] = useState(false)
     const [isDone, setIsDone] = useState(false)
     const triggerRef = useRef(null)
-    const { viewed } = useViewport(triggerRef, 0.9)
+    const { viewed } = useViewport(triggerRef, 0.9, '0px 0px -200px 0px')
 
     async function startTyping() {
         if (hasStarted)
@@ -24,9 +24,9 @@ export default function TypingHeader({header, textInArray, delayMs=0}) {
         for (let word of textInArray) {
             for (let char of word) {
                 setText(prev => prev + char)
-                await sleep(65)
+                await sleep(delayCharMs)
             }
-            await sleep(50)
+            await sleep(delayWordMs)
         }
         setIsTyping(false)
         await sleep(3500)
@@ -40,6 +40,8 @@ export default function TypingHeader({header, textInArray, delayMs=0}) {
     }, [viewed])
 
     let classes = [textStyle.text]
+    if (shadow)
+        classes.push(textStyle.shadow)
     if (!isTyping && !isDone)
         classes.push(textStyle.blink)
     if (isDone)

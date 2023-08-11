@@ -1,0 +1,35 @@
+.projects {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+}
+.h2 {
+    margin: 0;
+    padding-top: 100px;
+    text-align: center;
+    color: var(--text-color);
+    font-size: min(30px, 10vw);
+}
+
+.allProjectsBtn {
+    color: var(--text-color);
+    text-align: center;
+    padding: 10px 20px;
+    margin: 40px auto 50px auto;
+    background-color: var(--button-bg-color);
+    /* border: 2px solid var(--text-color); */
+    border: 2px solid rgb(255, 156, 90);
+    border-radius: 5px;
+    text-decoration: none;
+}
+.allProjectsBtn:hover {
+    background-color: rgb(255, 156, 90);
+    color: black;
+}
+
+.highlightedProjects {
+    font-family: var(--font-roboto-mono);
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-color);
+}
