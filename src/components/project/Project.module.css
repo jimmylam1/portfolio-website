@@ -28,6 +28,7 @@
     display: flex;
     flex-direction: column;
     width: min(500px, 90vw);
+    padding: 0 20px;
 }
 .headerWrapper {
     display: flex;
@@ -88,19 +89,21 @@
 }
 
 .imageWrapper {
-    width: min(600px, 90vw);
+    width: min(500px, 90vw);
 }
 
 .image {
     object-fit: contain;
     width: 100%;
-    height: 250px;
     max-width: 500px;
+}
+.useHeight {
+    height: 250px;
 }
 
 .mainImage {
     object-fit: contain;
-    width: min(600px, 90vw);
+    width: min(500px, 90vw);
     height: 100%;
     margin: 50px 0;
 }

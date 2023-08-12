@@ -18,6 +18,7 @@
     margin-top: 10px;
     font-family: var(--font-roboto-mono);
     font-weight: 400;
+    text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
@@ -33,18 +34,18 @@
 
 .iconContainer {
     display: grid;
-    grid-template-areas: "a a a a";
+    grid-template-areas: "a a a a a";
     gap: 30px;
     justify-content: center;
     margin-top: 100px;
 }
 
-@media only screen and (min-width: 601px) and (max-width: 700px) {
+@media only screen and (min-width: 701px) and (max-width: 850px) {
     .iconContainer {
-        grid-template-areas: "a a a";
+        grid-template-areas: "a a a a";
     }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
     .iconContainer {
         grid-template-areas: "a a a";
         gap: 15px;

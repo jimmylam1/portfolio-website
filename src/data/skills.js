@@ -64,6 +64,16 @@ const skills = [
         name: 'Arduino',
         category: 'Language'
     },
+    {
+        path: '/images/skills/graphicDesign.png',
+        name: 'Graphic Design',
+        category: 'tool'
+    },
+    {
+        path: '/images/skills/imageGeneration.png',
+        name: 'Image Generation',
+        category: 'tool'
+    },
 ]
 
 const skillsWithId = skills.map((i, idx) => ({

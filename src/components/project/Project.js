@@ -42,7 +42,7 @@ function getLinkButtons(links) {
 function DesktopLayout({title, image, category, tags, bulletPoints, pageUrl, links, showHr, triggerRef, viewed, canStart}) {
     const show = viewed && canStart
     const textCss = `${projectCss.textContainer} ${show ? animations.animateLtoR : animations.hidden}`
-    const imgCss = `${projectCss.image} ${show ? animations.animateRtoL : animations.hidden}`
+    const imgCss = `${projectCss.image} ${projectCss.useHeight} ${show ? animations.animateRtoL : animations.hidden}`
     const hrCss = `${projectCss.hr} ${show ? animations.animateFadeIn : animations.hidden}`
 
     return (
