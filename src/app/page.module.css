@@ -19,7 +19,7 @@
     animation: floatUp 1s;
     /* animation-fill-mode: forwards; */
     /* animation-delay: 0.5s; */
-    text-shadow: 0 0 50px black;
+    text-shadow: 0 0 10px black;
 }
 @keyframes floatUp {
     from { transform: translateY(30px); opacity: 0; }

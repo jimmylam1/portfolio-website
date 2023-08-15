@@ -6,15 +6,20 @@
 }
 
 .starOverlay {
-    background: url('/images/hero/starOverlay.png');
-    background-repeat: repeat;
+    background: white;
     position: absolute;
     width: 100vw;
     height: 100vh;
     top: 0;
     left: 0;
+    opacity: 0;
     z-index: 2;
     animation: moveStarOverlay 7s linear infinite;
+}
+.showStarOverlay {
+    background: url('/images/hero/starOverlay.png');
+    opacity: 1;
+    transition: 0.2s;
 }
 
 @keyframes moveStarOverlay {

@@ -71,7 +71,8 @@ const projects = [
         bulletPoints: [
             'Goal is to get the highest score by dodging incoming vehicles',
             'Built with OpenGL and C++, without any game engines like Unity',
-            'Figured out collision detection, repeating model objects, and keyboard input'
+            'Figured out collision detection, repeating model objects, and keyboard input',
+            'Voted Best Game out of 30+ final projects'
         ],
         pageUrl: '/projects/opengl',
         links: {
@@ -173,7 +174,8 @@ const projects = [
         bulletPoints: [
             'Collaborated with two other developers to build the game from scratch, without the use of any external libraries',
             'Uses Minimax to create a decision tree in order to choose the best outcome',
-            'Includes socket programming to comunicate with remote client'
+            'Includes socket programming to comunicate with remote client',
+            'Received the highest score out of 20+ groups'
         ],
         pageUrl: '/projects/aichess',
         links: {

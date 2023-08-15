@@ -11,7 +11,7 @@ import { useRef } from "react";
 import { useViewport } from "@/hooks/useViewport";
 import useEffectNoInitialMount from "@/hooks/useEffectNoInitialMount";
 
-export function Project({title, image, category, tags, bulletPoints, pageUrl, links, setProjectViewed, showHr=true, canStart=true}) {
+export function Project({title, image, category, tags, bulletPoints, pageUrl, links, setProjectViewed, showHr=true, canStart=true, forceShow=false}) {
     const triggerRef = useRef(null)
     const { viewed } = useViewport(triggerRef, 0.2)
 
@@ -21,9 +21,9 @@ export function Project({title, image, category, tags, bulletPoints, pageUrl, li
 
     const windowSize = useWindowSize()    
     if (windowSize.width > 1100) {
-        return DesktopLayout({title, image, category, tags, bulletPoints, pageUrl, links, showHr, triggerRef, viewed, canStart})
+        return DesktopLayout({title, image, category, tags, bulletPoints, pageUrl, links, showHr, triggerRef, viewed: viewed || forceShow, canStart})
     }
-    return MobileLayout({title, image, category, tags, bulletPoints, pageUrl, links, showHr, triggerRef, viewed, canStart})
+    return MobileLayout({title, image, category, tags, bulletPoints, pageUrl, links, showHr, triggerRef, viewed: viewed || forceShow, canStart})
 }
 
 function getLinkButtons(links) {

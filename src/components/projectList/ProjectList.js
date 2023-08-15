@@ -56,6 +56,7 @@ export default function ProjectList({headerTextArray, onlyHighlight=false}) {
                     showHr={onlyHighlight ? true : idx !== filteredProjectsArray.length-1}
                     setProjectViewed={() => !projectViewed && setProjectViewed(true)}
                     canStart={canStart}
+                    forceShow={projectViewed}
                 />
             ))}
             {onlyHighlight && <Link className={pageStyle.allProjectsBtn} href='/projects'>View All Projects</Link> }

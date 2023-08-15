@@ -8,6 +8,7 @@ import { MeshPhongMaterial } from 'three';
 
 export default function Hero({children}) {
     const [hasStarted, setHasStarted] = useState(false)
+    const [starOverlayClasses, setStarOverlayClasses] = useState(`${heroCss.starOverlay}`)
     const windowSize = useWindowSize()
 
     useEffect(() => {
@@ -15,6 +16,7 @@ export default function Hero({children}) {
             setHasStarted(true)
         }, 3000);
         // updateCanvas(bgRef.current, windowSize.width, windowSize.height)
+        setStarOverlayClasses(`${heroCss.starOverlay} ${heroCss.showStarOverlay}`)
     }, [])
 
     let toroidClasses = `${heroCss.canvasWrapper}`
@@ -23,7 +25,7 @@ export default function Hero({children}) {
 
     return (
         <div className={heroCss.hero}>
-            <div className={heroCss.starOverlay}></div>
+            <div className={starOverlayClasses}></div>
             <div className={heroCss.starDots}></div>
             <div className={toroidClasses}>
                 <Canvas
@@ -35,7 +37,7 @@ export default function Hero({children}) {
                     <pointLight position={[10, 0, -25]} intensity={12000} color={0xff0000}/> */}
                     <pointLight position={[-10, 0, -25]} intensity={3000} color={0x0077ff}/>
                     <pointLight position={[10, 0, -25]} intensity={3000} color={0xff0000}/>
-                    <Torus />
+                    <Torus scale={Math.min(1, 1.3 * windowSize.width / windowSize.height)}/>
                     {/* <Test /> */}
                 </Canvas>
             </div>
@@ -46,7 +48,7 @@ export default function Hero({children}) {
     )
 }
 
-function Torus() {
+function Torus({scale=1}) {
     // This reference will give us direct access to the mesh
     const meshRef = useRef()
     // Set up state for the hovered and active state
@@ -63,7 +65,7 @@ function Torus() {
         <mesh
             position={[0, 1, 0]}
             ref={meshRef}
-            scale={1}
+            scale={scale}
             rotation={[0.5, -0.5, 0]}
         >
             <torusGeometry args={[8, 2, 25, 100]} />
