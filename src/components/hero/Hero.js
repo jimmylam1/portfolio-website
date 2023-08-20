@@ -6,21 +6,17 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import useWindowSize from '@/hooks/useWindowSize';
 import { MeshPhongMaterial } from 'three';
 
-export default function Hero({children}) {
-    const [hasStarted, setHasStarted] = useState(false)
+export default function Hero({children, showToroid=false}) {
     const [starOverlayClasses, setStarOverlayClasses] = useState(`${heroCss.starOverlay}`)
     const windowSize = useWindowSize()
 
     useEffect(() => {
-        setTimeout(() => {
-            setHasStarted(true)
-        }, 3000);
         // updateCanvas(bgRef.current, windowSize.width, windowSize.height)
         setStarOverlayClasses(`${heroCss.starOverlay} ${heroCss.showStarOverlay}`)
     }, [])
 
     let toroidClasses = `${heroCss.canvasWrapper}`
-    if (hasStarted)
+    if (showToroid)
         toroidClasses += ` ${heroCss.show}`
 
     return (
@@ -35,8 +31,8 @@ export default function Hero({children}) {
                     {/* <ambientLight intensity={0.5} color={0x489dff}/> */}
                     {/* <pointLight position={[-10, 0, -25]} intensity={3000} color={0x489dff}/>
                     <pointLight position={[10, 0, -25]} intensity={12000} color={0xff0000}/> */}
-                    <pointLight position={[-10, 0, -25]} intensity={3000} color={0x0077ff}/>
-                    <pointLight position={[10, 0, -25]} intensity={3000} color={0xff0000}/>
+                    <pointLight position={[-30, 0, -25]} intensity={5000} color={0x0077ff}/>
+                    <pointLight position={[30, 0, -25]} intensity={5000} color={0xff0000}/>
                     <Torus scale={Math.min(1, 1.3 * windowSize.width / windowSize.height)}/>
                     {/* <Test /> */}
                 </Canvas>

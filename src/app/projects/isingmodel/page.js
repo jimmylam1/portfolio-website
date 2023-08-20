@@ -17,7 +17,7 @@ export default function DiscordBots() {
                     <p>
                         The Ising model attempts to model the behavior of a ferromagnet in the absence of an external magnetic field. In particular, this model takes into account the tendency for neighboring dipoles in a lattice to align parallel to each other, and the model assumes that each dipole can only point either up or down. 
                         <br/><br/>
-                        This project investigates the Ising model for different lattices, including a square, triangular, hexagonal, and random lattices, and it uses a Monte Carlo simulation to find the critical temperature (The point at which the lattice changes from having some net magnetization to zero net magnetization) for each lattice. 
+                        This project investigates the Ising model for different lattices, including a square, triangular, hexagonal, and random lattices, and it uses a Monte Carlo simulation to find the critical temperature (the point at which the lattice changes from having some net magnetization to zero net magnetization) for each lattice. 
                     </p>
 
                     <div className={pageCss.gallery}>
@@ -42,7 +42,7 @@ export default function DiscordBots() {
 
                     <h2>Results</h2>
                     <p>
-                        Here are the results for some of the lattices I used. The critical temperature is the first data point, when going left to right, where the average magnetization is zero. Note: for temperatures below the critical temperature, the average magnetization seem to be either +1 or -1, and this just means the dipoles are mostly either pointing up or down. 
+                        Here are the results for some of the lattices I used. The critical temperature is the first data point, when going left to right, where the average magnetization is zero. Note: for temperatures below the critical temperature, the average magnetization seem to be either +1 or -1, and this just means the majority of the dipoles are either pointing up or down. 
                     </p>
                     <div className={pageCss.gallery}>
                         <Image 

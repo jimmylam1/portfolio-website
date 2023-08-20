@@ -8,9 +8,10 @@ const projects = [
         tags: ['JavaScript', 'Node.js', 'MongoDB', 'Google Sheets API', 'Web Scraping', 'Child Processes', 'OCR'],
         bulletPoints: [
             'Centered around the game Mario Kart Tour',
-            'Used by thousands of people',
-            'Commands are optimized for speed',
-            'Extensive use of image generation for the best User Experience',
+            'Added to 1000+ Discord servers',
+            'Used by 300+ unique users every day',
+            'Fast response time is a top priority',
+            'Extensive use of image generation for the best user experience',
         ],
         pageUrl: '/projects/discordbots',
         links: {
@@ -48,10 +49,9 @@ const projects = [
         tags: ['Python', 'Starlette', 'TypeScript', 'Svelte', 'Docker', 'SQLite', 'REST APIs'],
         bulletPoints: [
             'A central website for Mario Kart',
-            'Manages many tournaments throughout the year',
+            'Manages tournaments throughout the year',
             'Over 40,000 registered players',
-            'Currently being rewritten from the ground up',
-            'The GitHub repository will be public once the new site is up and running'
+            'Currently being rewritten from the ground up'
         ],
         pageUrl: '/projects/mkc',
         links: {
@@ -61,6 +61,27 @@ const projects = [
             video: null,
         },
         isHighlight: true,
+    },
+    {
+        id: 4,
+        title: 'Are We There Yet',
+        image: '/images/projects/areWeThereYet.png',
+        category: 'Game',
+        tags: ['Unity', 'C#'],
+        bulletPoints: [
+            'Goal is to reach the end of the level',
+            'Built using the Unity game engine in collaboration with two other developers',
+            'Responsible for the background music, sound effects, and level development',
+            'Received a grade of 100% on the final build (mean: 94%)'
+        ],
+        pageUrl: '/projects/arewethereyet',
+        links: {
+            demo: '/demo/arewethereyet',
+            github: 'https://github.com/jimmylam1/Are-We-There-Yet',
+            website: null,
+            video: null,
+        },
+        isHighlight: false,
     },
     {
         id: 3,
@@ -84,26 +105,6 @@ const projects = [
         isHighlight: true,
     },
     {
-        id: 4,
-        title: 'Are We There Yet',
-        image: '/images/projects/areWeThereYet.png',
-        category: 'Game',
-        tags: ['Unity', 'C#'],
-        bulletPoints: [
-            'Goal is to react the end of the level',
-            'Built using the Unity game engine in collaboration with two other developers',
-            'Responsible for the background music, sound effects, and level development'
-        ],
-        pageUrl: '/projects/arewethereyet',
-        links: {
-            demo: '/demo/arewethereyet',
-            github: 'https://github.com/jimmylam1/Are-We-There-Yet',
-            website: null,
-            video: null,
-        },
-        isHighlight: false,
-    },
-    {
         id: 5,
         title: 'Visualization of Asteroid Impact',
         image: '/images/projects/asteroid.png',
@@ -113,7 +114,8 @@ const projects = [
             'Visualization of an astroid impact on a body of water',
             'Used VisIt as the visualization software',
             'Wrote custom Python scripts to generate frames',
-            'Used FFmpeg to convert frames into a video'
+            'Used FFmpeg to convert frames into a video',
+            'Selected as one of the best videos out of 25+ submissions'
         ],
         pageUrl: '/projects/asteroidimpact',
         links: {
@@ -132,9 +134,10 @@ const projects = [
         tags: ['Python', 'Integrated Circuits', 'Simulation'],
         bulletPoints: [
             'Designed and built a 4x4 LED Cube along with the driver circuit',
-            'The driver circuit was made using only logic ICs',
+            'The driver circuit was made using only discrete logic ICs',
             'Used Python to create the LED cube patterns, and wrote code to create a binary file for the EEPROM',
-            'A simulation program was also created in Python to aid in the development and debugging processes'
+            'A simulation program was also created in Python to aid in the development and debugging processes',
+            'Received a grade of 100%'
         ],
         pageUrl: '/projects/ledcube',
         links: {
@@ -142,26 +145,6 @@ const projects = [
             github: 'https://github.com/jimmylam1/LED-Cube',
             website: null,
             video: 'https://youtu.be/2x6tbyymKe0',
-        },
-        isHighlight: false,
-    },
-    {
-        id: 7,
-        title: 'Trivia',
-        image: '/images/projects/trivia.png',
-        category: 'Game',
-        tags: ['JavaScript', 'React', 'HTML', 'CSS'],
-        bulletPoints: [
-            'A game where the player must answer questions from a variety of different categories',
-            'The player is able to select both the category and difficulty for each question',
-            'Data is fetched from the Open Trivia Database API'
-        ],
-        pageUrl: '/projects/trivia',
-        links: {
-            demo: '/demo/trivia',
-            github: 'https://github.com/jimmylam1/Trivia',
-            website: null,
-            video: null,
         },
         isHighlight: false,
     },
@@ -221,6 +204,26 @@ const projects = [
         links: {
             demo: null,
             github: 'https://github.com/jimmylam1/Ferromagnet-Simulation',
+            website: null,
+            video: null,
+        },
+        isHighlight: false,
+    },
+    {
+        id: 7,
+        title: 'Trivia',
+        image: '/images/projects/trivia.png',
+        category: 'Game',
+        tags: ['JavaScript', 'React', 'HTML', 'CSS'],
+        bulletPoints: [
+            'A game where the player must answer questions from a variety of different categories',
+            'The player is able to select both the category and difficulty for each question',
+            'Data is fetched from the Open Trivia Database API'
+        ],
+        pageUrl: '/projects/trivia',
+        links: {
+            demo: '/demo/trivia',
+            github: 'https://github.com/jimmylam1/Trivia',
             website: null,
             video: null,
         },

@@ -22,11 +22,11 @@ export default function DiscordBots() {
                         The website was built using only HTML, CSS, and Vanilla JavaScript. The reason for not using a library or framework was to gain experience building a large project with only HTML and CSS, and this allows me to be familiar with them in a more fundamental level.
                     </p>
 
-                    <h2>Main features and challenges</h2>
+                    <h2>Challenges faced</h2>
                     <p>
-                        The biggest challenge was making the pages both desktop and mobile friendly. It is straightforward to implement the desktop layout. However, for mobile devices, I had to make sure everything was scaled correctly. For example, images had to be scaled down while maintaining the original aspect ratio, and some padding or margin had to be added to make sure the text looks nice.
+                        The biggest challenge was making the pages both desktop and mobile friendly. It is straightforward to implement the desktop layout. However, for mobile devices, I had to make sure everything was scaled correctly.
                         <br/><br/>
-                        Another challenge I had was making the navigation bar responsive for both desktop and mobile layouts. For the desktop version, I made the navbar contain three categories: "Home", "Commands," and "Resources". Then, when a user hovers over them, a list of sections appear. For the mobile version, I made a Hamburger Menu where it displays all the categories as well as sections all at once, and this was primarily because I wanted to minimize the number of taps required. 
+                        Another challenge I had was making the navigation bar responsive for both desktop and mobile layouts. For the desktop version, I made the navbar contain three categories: "Home", "Commands," and "Resources". Then, when a user hovers over them, a list of sections appear. For the mobile version, I made a Hamburger Menu where it displays all the categories as well as all the sections at once, and this was primarily because I wanted to minimize the number of taps required to navigate to different pages. 
                     </p>
 
                     

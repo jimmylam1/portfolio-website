@@ -35,6 +35,11 @@ const skills = [
         category: 'frontend'
     },
     {
+        path: '/images/skills/nodejs.png',
+        name: 'Node.js',
+        category: 'backend'
+    },
+    {
         path: '/images/skills/mongo.png',
         name: 'MongoDB',
         category: 'database'
@@ -55,14 +60,9 @@ const skills = [
         category: 'tool'
     },
     {
-        path: '/images/skills/nodejs.png',
-        name: 'Node.js',
-        category: 'backend'
-    },
-    {
-        path: '/images/skills/arduino.png',
-        name: 'Arduino',
-        category: 'Language'
+        path: '/images/skills/bash.png',
+        name: 'Bash',
+        category: 'tool'
     },
     {
         path: '/images/skills/graphicDesign.png',

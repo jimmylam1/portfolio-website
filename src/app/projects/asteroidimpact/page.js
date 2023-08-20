@@ -16,7 +16,7 @@ export default function DiscordBots() {
                 <div className={pageCss.content}>
                     <h2>About</h2>
                     <p>
-                        This project dives into the visualization of a simulated astroid impact into a body of water. The video includes isosurfaces and volume rendering of the asteroid, water, temperature, and pressure during impact. The dataset can be found <a href='https://oceans11.lanl.gov/deepwaterimpact/yA31_300x300x300-FourScalars_resolution.html' target='_blank'>here</a>. 
+                        This project dives into the visualization of a simulated astroid impact into a body of water. The video include isosurfaces as well as volume rendering of the asteroid, water, temperature, and pressure during impact. The dataset can be found <a href='https://oceans11.lanl.gov/deepwaterimpact/yA31_300x300x300-FourScalars_resolution.html' target='_blank'>here</a>. 
                     </p>
 
                     <h2>How was it made?</h2>
@@ -28,7 +28,7 @@ export default function DiscordBots() {
 
                     <h2>Challenges faced</h2>
                     <p>
-                        Using the visualization software was a bit of a challenge. At first, it took time to become familiar with the software itself. Afterwards, it was difficult complete some visualizations because the program would often crash due to the large data size (over 80GB). I ended up having to split the data into chunks instead of rendering all at once. 
+                        Using the visualization software was a bit of a challenge. At first, it took time to become familiar with the software itself. Afterwards, it was difficult complete some visualizations because the program would often crash due to the large data size (over 80GB). I ended up having to split the data into chunks instead of rendering them all at once. 
                         <br/><br/>
                         Rendering each scene proved to be a bit of a challenge. My computer was not able to see a preview of each scene, so I had to wait a few hours for the rendering to complete before I can see if I liked it or not. In some cases, I had to adjust my scripts and re-render the scene entirely.
                     </p>

@@ -12,7 +12,8 @@ export default function LinkButton({name, linkUrl}) {
     }
 
     return (
-        <a className={`${buttonCss.container} ${name}`} href={linkUrl} target='_blank'>
+        <a className={`${buttonCss.container}`} href={linkUrl} target='_blank'>
+            <div className={`${buttonCss[name]} ${buttonCss.icon}`}></div>
             {textLookup[name]}
         </a>
     )

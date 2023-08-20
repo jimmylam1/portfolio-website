@@ -1,5 +1,6 @@
 .container {
     display: flex;
+    align-items: center;
     padding: 10px 20px;
     background-color: var(--button-bg-color);
     color: var(--text-color);
@@ -12,16 +13,46 @@
     background-color: rgb(209, 255, 255);
     color: black;
 }
+.container:hover .demo {
+    background: url('/images/icons/demoDark.svg');
+    background-size: cover;
+}
+.container:hover .github {
+    background: url('/images/icons/githubDark.svg');
+    background-size: cover;
+}
+.container:hover .website {
+    background: url('/images/icons/websiteDark.svg');
+    background-size: cover;
+}
+.container:hover .video {
+    background: url('/images/icons/youtubeDark.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
-/* .demo {
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
 
+.demo {
+    background: url('/images/icons/demoLight.svg');
+    background-size: cover;
 }
 .github {
-
+    background: url('/images/icons/githubLight.svg');
+    background-size: cover;
 }
 .website {
-
+    background: url('/images/icons/websiteLight.svg');
+    background-size: cover;
 }
 .video {
-
-} */
+    background: url('/images/icons/youtubeLight.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}

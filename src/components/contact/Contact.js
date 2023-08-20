@@ -12,7 +12,7 @@ export default function Contact() {
     const redModal = {
         color: 'red',
         header: 'There was a problem sending your message.',
-        content: 'If the problem persists, you can email me directly at jimmyportfolioemail@gmail.com',
+        content: 'If the problem persists, you can email me directly at jimmy@jimmyl.dev',
         handleClose: handleModalClose
     }
     const greenModal = {

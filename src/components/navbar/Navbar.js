@@ -9,7 +9,7 @@ const links = [
     ['/projects', 'Projects'],
     ['/Resume.pdf', 'Resume'],
     ['https://github.com/jimmylam1', 'GitHub'],
-    ['https://www.linkedin.com/in/jimmy-lam-85321627b', 'LinkedIn']
+    ['https://www.linkedin.com/in/jimmylamdev', 'LinkedIn']
 ]
 
 export default function Navbar() {

@@ -17,7 +17,7 @@ export default function DiscordBots() {
                         <br/><br/>
                         The car contains two gauges: life and fuel, and the game ends when one of the two becomes empty. Every time the player runs into an obstacle, the life gauge decreases. Also, the fuel gauge depletes over time, and the only way to maintain it is to collect fuel scattered throughout each level.
                         <br/><br/>
-                        There are three levels: City, Space, and Desert, and the difficulty increases incrementally. For gameplay, the player can hop, shoot lasers, and use turbo. Do you have what it takes to complete all three levels?
+                        There are three levels: City, Space, and Desert. For gameplay, the player can hop, shoot lasers, and use turbo. Do you have what it takes to complete all three levels?
                     </p>
 
                     <h2>How was it built?</h2>

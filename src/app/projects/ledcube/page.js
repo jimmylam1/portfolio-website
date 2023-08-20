@@ -17,7 +17,7 @@ export default function DiscordBots() {
                 <div className={pageCss.content}>
                     <h2>About</h2>
                     <p>
-                        This 4x4 LED cube was built for my final project in Digital Electronics. I created the cube, the driver circuit, and code to generate the animations. This project does not use a microprocessor or a microcontroller, like an Arduino, because I wanted to use components I learned throughout the class. Instead, an EEPROM stores all the data used by the cube.
+                        This 4x4 LED cube was built for my final project in Digital Electronics. I created the cube, the driver circuit, and code to generate the animations. This project does not use a microcontroller, like an Arduino, because I wanted to use components I learned throughout the class. Instead, an EEPROM stores all the data used by the cube.
                         <br/><br/>
                         After the class ended, I redesigned the circuit to be compatable with an Arduino since it would be much easier to build, and similarly, I programmed an Arduino to display the cube animations.
                     </p>
@@ -26,7 +26,7 @@ export default function DiscordBots() {
                     <p>
                         The cube itself consists of 64 LEDs soldered together. Overall, the LED cube works by lighting one row at a time (16 LEDs), and at the same time, selecting which LED in the row should be on or off. By cycling through each row fast enough, above around 3 kHz, the cube appears like all the LEDs are on at the same time through persistence of vision.
                         <br/><br/>
-                        The driver circuit was created using only logic ICs including counters, D-type flip-flops, EEPROM, multiplexers, demultiplexers, and shift registers.
+                        The driver circuit was created using only discrete logic ICs including counters, D-type flip-flops, EEPROM, multiplexers, demultiplexers, and shift registers.
                         <br/><br/>
                         I used Python to create a binary file for the EEPROM. First, I have a text file that contains part of the animations in hexadecimal format. For more complex animations, I wrote Python scripts to generate them. Then, I wrote a basic compiler to convert the text file to a binary file, where it would then be added to the EEPROM through a programmer.
                         <br/><br/>

@@ -18,11 +18,11 @@ export default function DiscordBots() {
 
                     <h2>How was it built?</h2>
                     <p>
-                        Everything was built from scratch using only the C programming language, and it was developed in collaboration with two other developers.
+                        Everything was built from scratch using only the C programming language, and it was made in collaboration with two other developers.
                         <br/><br/>
                         The backend defines basic chess components, such as the gameboard, the chess pieces, and what the valid moves are for each piece. It also includes Minimax, a decision rule used in AI, to choose the best move. Finally, it includes socket programming to comunicate with a remote client (computer).
                         <br/><br/>
-                        The frontend is displayed on the command line, and the gameboard consists of the first letter of each chess piece as well as a colored background for the chess board. 
+                        The frontend is displayed on the command line, and the gameboard consists of the first letter of each chess piece as well as a colored background for the chessboard. 
                     </p>
 
                     <h2>Challenges faced</h2>

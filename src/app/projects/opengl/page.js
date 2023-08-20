@@ -25,9 +25,9 @@ export default function DiscordBots() {
                     <p>
                         Since this project did not use a game engine, everything had to be coded by hand, and one of the challenges was figuring out collision detection. Without it, the main player's vehicle would go right through everything. My solution was to model each vehicle as a rectangle on the road, and that simplifies the problem from being 3D to being 2D. Then, to check if a collision has occurred, I would check if two rectanges from two vehicles overlap with each other.
                         <br/><br/>
-                        Another challenge I had was figuring out how to display everything. Trying to instantiate single long road is impractical since the program would have to render a lot of objects, even if they are very far away, and that would result in performance issues. Instead, I use a finite number of road segments, icluding the fence, grass, and trees. Segments behind the camera as well as segments farther than around 10 segments away are not rendered.
+                        Another challenge I had was figuring out how to display everything. Trying to instantiate one long road is impractical since the program would have to render all the objects, even if they are very far away. Instead, I use a finite number of road segments, including the fence, grass, and trees. Segments that go behind the camera respawn to the back of the viewable road.
                         <br/><br/>
-                        One more challenge I faced was with keyboard inputs. While OpenGL includes functions to handle them, they were not able to be easily integrated with the game. Instead, I created my own callback function to handle key presses.
+                        One more challenge I faced was with keyboard inputs. While OpenGL include callback functions to handle them, they were not able to be integrated with the game. Instead, I created my own callback function to handle key presses.
                     </p>
                     
                 </div>

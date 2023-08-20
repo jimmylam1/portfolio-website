@@ -59,6 +59,10 @@
     margin-top: 60px;
     font-size: 30px;
     font-weight: 500;
+    line-height: 1;
+}
+.content > h3 {
+    margin-top: 50px;
 }
 .content > p {
     line-height: 1.5;

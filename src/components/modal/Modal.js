@@ -21,7 +21,7 @@ export default function Modal({color, header, content, handleClose}) {
 
     return (
         <div className={modalCss.container}>
-            <div className={bgClasses.join(" ")} onClick={handleClick}>
+            <div className={bgClasses.join(" ")} >
                 <div className={mainClasses.join(" ")}>
                     <h2>{header}</h2>
                     <p>{content}</p>

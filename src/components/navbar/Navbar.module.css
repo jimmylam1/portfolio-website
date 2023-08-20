@@ -66,15 +66,15 @@
 
 .mobileMenuWrapper {
     width: 100vw;
-    height: 100vh;
+    height: 200vh;
     position: absolute;
     top: 0;
-    left: calc(-100vw);
+    left: -105vw;
     background-color: rgba(0, 0, 0, 0);
     z-index: 901;
 }
 .showWrapper {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.2);
     left: 0;
 }
 .closeMobileMenuArea {

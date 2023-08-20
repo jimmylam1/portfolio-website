@@ -6,7 +6,7 @@ import textStyle from './TypingHeader.module.css'
 import { useViewport } from "@/hooks/useViewport"
 
 
-export default function TypingHeader({header, textInArray, delayMs=0, delayCharMs=65, delayWordMs=50, shadow=false}) {
+export default function TypingHeader({header, textInArray, delayMs=0, delayCharMs=65, delayWordMs=50, shadow=false, setViewed=null, setFinished=null}) {
     const [text, setText] = useState("")
     const [hasStarted, setHasStarted] = useState(false)
     const [isTyping, setIsTyping] = useState(false)
@@ -19,6 +19,9 @@ export default function TypingHeader({header, textInArray, delayMs=0, delayCharM
             return
         setHasStarted(true)
 
+        if (setViewed)
+            setViewed(true)
+
         await sleep(delayMs)
         setIsTyping(true)
         for (let word of textInArray) {
@@ -29,7 +32,12 @@ export default function TypingHeader({header, textInArray, delayMs=0, delayCharM
             await sleep(delayWordMs)
         }
         setIsTyping(false)
-        await sleep(3500)
+
+        await sleep(100)
+        if (setFinished)
+            setFinished(true)
+
+        await sleep(3000)
         setIsDone(true)
     }
 
