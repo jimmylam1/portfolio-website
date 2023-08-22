@@ -20,7 +20,7 @@ export default function DiscordBots() {
                         Collectively, my Discord bots have been added to over 1,000 Discord servers, and they are used by 300+ unique users every day.
                     </p>
 
-                    <h2>How were they built?</h2>
+                    <h2>How are they built?</h2>
                     <p>
                         All my bots are built using JavaScript with Node.js, and the Discord.js library is what I use to connect with Discord. In addition, MongoDB is the database used across all bots. 
                         <br/><br/>
@@ -29,9 +29,9 @@ export default function DiscordBots() {
 
                     <h2>Common features across all bots</h2>
                     <p>
-                        All my Discord bots use image generation extensively. Since Discord bots can only display text in a few specific ways, images allow for them to have full control over how responses should look. I use Canvas for all the image related needs.
+                        All my Discord bots use image generation extensively. Since Discord bots can only display text in a few specific ways, images allow for full control over how responses should look. I use Canvas for all the image related needs.
                         <br/><br/>
-                        Command responsiveness is a top priority. When someone uses a command, I try to mnimize the time it takes for them to receive a response. Whenever necessary, data will be cached like when querying a database or fetching data.
+                        Command responsiveness is a top priority. When someone uses a command, I try to minimize the time it takes for them to receive a response. Whenever necessary, data will be cached like when querying a database or fetching data.
                         <br/><br/>
                         Web scraping is an integral tool for all my bots. By web scraping <a href='https://www.mariowiki.com/Mario_Kart_Tour' target='_blank'>Mario Wiki</a>, the bots are able to fetch all the required assets without my assistance.
                         <br/><br/>
@@ -56,7 +56,7 @@ export default function DiscordBots() {
 
                     <h3>MKT Time Trial Bot</h3>
                     <p>
-                        A major feature of this bot is the ability to use Optical Character Recognition (OCR) to read a screenshot and extract text from it. I initially tried using Tesseract, an OCR engine, but it produced inconsistent results. Instead of attempting to train it, I decided to experiment and create my own OCR reader from analyzing pixel data. The video below is a conceptual overview on how it was done:
+                        A challenge I faced was figuring out how to use Optical Character Recognition (OCR) to read a screenshot and extract text from it. I initially tried using Tesseract, an OCR engine, but it produced inconsistent results. Instead of attempting to train it, I decided to experiment and create my own OCR reader from analyzing pixel data. The video below is a conceptual overview on how it was done:
                     </p>
                     <div className={pageCss.videoWrapper}>
                         <iframe className={pageCss.video} width="560" height="315" src="https://www.youtube.com/embed/Z9gY5Hl13y0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

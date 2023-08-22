@@ -91,7 +91,7 @@ function MobileLayout({title, image, category, tags, bulletPoints, pageUrl, link
                             {tags.map((t, idx) => <Tag key={idx} name={t}/>)}
                         </div>
                     </div>
-                    <Link href={pageUrl}>
+                    <Link href={pageUrl} className={projectCss.pageLinkContainer}>
                         <Image className={projectCss.image} src={image} width={200} height={200} alt={title}/>
                     </Link>
                     <div className={projectCss.textContainer}>
