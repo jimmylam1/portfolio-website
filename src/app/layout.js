@@ -1,6 +1,7 @@
 import './globals.css'
 import { Inter, Poppins, Roboto, Roboto_Mono } from 'next/font/google'
 import Navbar from '@/components/navbar/Navbar'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 const poppins = Poppins({ subsets: ['latin'], weight: ['300', '400', '500', '600'], variable: '--font-poppins' })
@@ -18,6 +19,14 @@ export default function RootLayout({ children }) {
 
     return (
         <html lang="en">
+            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-1Y0MVFCFNR"></Script>
+            <Script id="google-analytics">
+                {`window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-1Y0MVFCFNR');`}
+            </Script>
             <body className={classNames.join(" ")}>
                 <Navbar />
                 <div>
