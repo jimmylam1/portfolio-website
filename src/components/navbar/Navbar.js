@@ -6,10 +6,10 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const links = [
-    ['/projects', 'Projects'],
-    ['/Resume.pdf', 'Resume'],
-    ['https://github.com/jimmylam1', 'GitHub'],
-    ['https://www.linkedin.com/in/jimmylamdev', 'LinkedIn']
+    ['/projects', 'Projects', '_self'],
+    ['https://api.jimmyl.dev/resume', 'Resume', '_blank'],
+    ['https://github.com/jimmylam1', 'GitHub', '_blank'],
+    ['https://www.linkedin.com/in/jimmylamdev', 'LinkedIn', '_blank']
 ]
 
 export default function Navbar() {
@@ -40,7 +40,7 @@ export default function Navbar() {
                 </div>
                 <ul>
                     {links.map((i, idx) => (
-                        <li key={idx}><Link className={navCss.link} href={i[0]}>{i[1]}</Link></li>
+                        <li key={idx}><Link className={navCss.link} href={i[0]} target={i[2]}>{i[1]}</Link></li>
                     ))}
                 </ul>
             </div>
@@ -52,7 +52,7 @@ export default function Navbar() {
                     </div>
                     <ul>
                         {links.map((i, idx) => (
-                            <li key={idx}><Link className={navCss.link} href={i[0]}>{i[1]}</Link></li>
+                            <li key={idx}><Link className={navCss.link} href={i[0]} target={i[2]}>{i[1]}</Link></li>
                         ))}
                     </ul>
                 </div>
