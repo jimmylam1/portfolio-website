@@ -31,7 +31,7 @@ export default function Skills({headerViewed=false, headerDone=false}) {
 
         setHasTriggered(true)
         for (let i = 0; i < skills.length; i++) {
-            setVisibleArray(skills.map((_, idx) => idx <= i))
+            setVisibleArray(prev => prev.map((_, idx) => idx <= i))
             await sleep(70)
         }
     }
@@ -58,7 +58,7 @@ function SkillIcon({imgPath, name, visible=false}) {
 
     return (
         <div className={containerClass}>
-            <Image src={imgPath} width={125} height={125} alt={name}/>
+            <Image src={imgPath} width={125} height={125} alt={name} priority/>
             <h4>{name}</h4>
         </div>
     )

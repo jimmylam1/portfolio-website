@@ -65,7 +65,7 @@ function DesktopLayout({title, image, category, tags, bulletPoints, pageUrl, lin
                     </div>
                 </div>
                 <Link className={projectCss.imageWrapper} href={pageUrl}>
-                    <Image className={imgCss} src={image} width={200} height={200} alt={title}/>
+                    <Image className={imgCss} src={image} width={200} height={200} alt={title} priority/>
                 </Link>
             </div>
             {showHr && <hr className={hrCss}/>}
@@ -92,7 +92,7 @@ function MobileLayout({title, image, category, tags, bulletPoints, pageUrl, link
                         </div>
                     </div>
                     <Link href={pageUrl} className={projectCss.pageLinkContainer}>
-                        <Image className={projectCss.image} src={image} width={200} height={200} alt={title}/>
+                        <Image className={projectCss.image} src={image} width={200} height={200} alt={title} priority/>
                     </Link>
                     <div className={projectCss.textContainer}>
                         <ul>
@@ -126,7 +126,7 @@ export function ProjectPage({title, image, category, tags, links={}}) {
                     {tags.map((t, idx) => <Tag key={idx} name={t}/>)}
                 </div>
             </div>
-            {image && <Image className={projectCss.mainImage} src={image} width={300} height={300} alt={title} />}
+            {image && <Image className={projectCss.mainImage} src={image} width={300} height={300} alt={title} priority/>}
             <div className={projectCss.textContainer}>
                 <div className={projectCss.pageLinkContainer}>
                     {getLinkButtons(projectPageLinks)}
