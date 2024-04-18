@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useState, useRef } from 'react';
-import emailjs from '@emailjs/browser';
 import contactCss from './Contact.module.css'
 import Modal from '../modal/Modal';
 
@@ -27,14 +26,34 @@ export default function Contact() {
         setModalData(null)
     }
 
+    async function postData() {
+        const data = form.current
+        const response = await fetch('https://api.jimmyl.dev/contact', {
+            method: 'POST',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify({
+                from_name: data.name.value,
+                email: data.email.value,
+                message: data.message.value
+            })
+        });
+        
+        const json = await response.json();
+        return {success: response.status === 200, json}
+    }
     function handleSubmit(e) {
         e.preventDefault();
         if (isSubmitting)
             return
         setIsSubmitting(true)
 
-        emailjs.sendForm('service_562q4uf', 'template_o8qaj0m', form.current, 'rnUqyoR85XbIzJaWP')
-            .then((result) => {
+        postData()
+            .then(({ success }) => {
+                if (!success) {
+                    setIsSubmitting(false)
+                    setModalData(redModal)
+                    return
+                }
                 setIsSubmitting(false)
                 setModalData(greenModal)
                 e.target.reset()
@@ -43,6 +62,7 @@ export default function Contact() {
                 setIsSubmitting(false)
                 setModalData(redModal)
             });
+        return
     }
 
     return (
