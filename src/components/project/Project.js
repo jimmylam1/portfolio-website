@@ -16,7 +16,8 @@ export function Project({title, image, category, tags, bulletPoints, pageUrl, li
     const { viewed } = useViewport(triggerRef, 0.2)
 
     useEffectNoInitialMount(() => {
-        setProjectViewed()
+        if (viewed)
+            setProjectViewed()
     }, [viewed])
 
     const windowSize = useWindowSize()    

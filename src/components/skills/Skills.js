@@ -32,7 +32,7 @@ export default function Skills({headerViewed=false, headerDone=false}) {
         setHasTriggered(true)
         for (let i = 0; i < skills.length; i++) {
             setVisibleArray(prev => prev.map((_, idx) => idx <= i))
-            await sleep(70)
+            await sleep(50)
         }
     }
 
