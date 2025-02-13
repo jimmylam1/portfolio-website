@@ -26,7 +26,7 @@ export default function Home() {
 
             <div className={pageStyle.skills}>
                 <div style={{'paddingTop': '50px'}}>
-                    <TypingHeader header={'h2'} textInArray={['Skills']} delayCharMs={85} delayMs={250} setViewed={setSkillsHeaderViewed} setFinished={setSkillsDone}/>
+                    <TypingHeader header={'h2'} textInArray={['Skills']} delayCharMs={85} delayMs={0} setViewed={setSkillsHeaderViewed} setFinished={setSkillsDone}/>
                 </div>
                 <Skills headerViewed={skillsHeaderViewed} headerDone={skillsDone}/>
             </div>
@@ -39,7 +39,7 @@ export default function Home() {
             
             <div className={pageStyle.contact}>
                 <div style={{'paddingTop': '50px', 'paddingBottom': '100px'}}>
-                    <TypingHeader header={'h2'} textInArray={['Con', 'tact']} delayCharMs={75} delayMs={250}/>
+                    <TypingHeader header={'h2'} textInArray={['Con', 'tact']} delayCharMs={75} delayMs={0}/>
                 </div>
                 <Contact />
             </div>
