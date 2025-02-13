@@ -5,33 +5,28 @@ const skills = [
         category: 'language'
     },
     {
-        path: '/images/skills/javascript.png',
-        name: 'JavaScript',
-        category: 'language'
-    },
-    {
-        path: '/images/skills/c.png',
-        name: 'C',
+        path: '/images/skills/typescript.png',
+        name: 'JavaScript TypeScript',
         category: 'language'
     },
     {
         path: '/images/skills/c++.png',
-        name: 'C++',
+        name: 'C, C++',
         category: 'language'
     },
     {
         path: '/images/skills/html.png',
-        name: 'HTML',
-        category: 'frontend'
-    },
-    {
-        path: '/images/skills/css.png',
-        name: 'CSS',
+        name: 'HTML, CSS',
         category: 'frontend'
     },
     {
         path: '/images/skills/react.png',
         name: 'React',
+        category: 'frontend'
+    },
+    {
+        path: '/images/skills/svelte.png',
+        name: 'Svelte',
         category: 'frontend'
     },
     {
@@ -45,8 +40,8 @@ const skills = [
         category: 'database'
     },
     {
-        path: '/images/skills/sqlite.png',
-        name: 'SQLite',
+        path: '/images/skills/sql.png',
+        name: 'SQL',
         category: 'database'
     },
     {
@@ -62,6 +57,11 @@ const skills = [
     {
         path: '/images/skills/bash.png',
         name: 'Bash',
+        category: 'tool'
+    },
+    {
+        path: '/images/skills/arduino.png',
+        name: 'Arduino',
         category: 'tool'
     },
     {
