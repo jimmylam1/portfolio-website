@@ -1,0 +1,66 @@
+.page {
+    background-color: var(--background-color);
+    min-height: calc(100vh - 100px);
+    color: white;
+    padding: 70px 50px;
+}
+.page > h1 {
+    font-size: 1.5rem;
+}
+.page > p {
+    margin-bottom: 30px;
+    color: rgb(214, 214, 214);
+}
+
+.grid {
+    display: grid;
+    grid-template-areas: "a a a";
+    gap: 20px;
+    justify-content: start;
+}
+@media only screen and (min-width: 830px) and (max-width: 1200px) {
+    .grid {
+        grid-template-areas: "a a";
+    }
+}
+@media only screen and (max-width: 829px) {
+    .grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.demo {
+    padding: 20px;
+    border-radius: 20px;
+    border: 2px solid gainsboro;
+    width: 300px;
+    text-decoration: none;
+    outline: none;
+    color: inherit;
+}
+.demo:hover {
+    background-color: rgb(27, 32, 45);;
+}
+.demo h1 {
+    font-size: 1.1rem;
+}
+.demo p {
+    font-size: 0.9rem;
+    color: rgb(214, 214, 214);
+    margin: 0;
+}
+
+.imageWrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.image {
+    object-fit: cover;
+    width: 100%;
+    max-width: 300px;
+    height: 169px;
+    margin: 0 auto;
+}

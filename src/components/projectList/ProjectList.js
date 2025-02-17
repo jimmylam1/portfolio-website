@@ -17,9 +17,21 @@ export default function ProjectList({headerTextArray, onlyHighlight=false}) {
     const header = <h2 ref={highlightedProjectsRef} className={highlightedProjectsClasses}>{headerTextArray.join("")}</h2>
     const filteredProjectsArray = projectsArray.filter(p => onlyHighlight ? p.isHighlight : true)
 
+    let demoSection = null
+    if (!onlyHighlight) {
+        demoSection = (
+            <div className={`${pageStyle.demoWrapper} ${headerViewed ? animationCss.animateFloatUp : animationCss.hidden}`}>
+                <div className={pageStyle.demo}>
+                    A consolidated list of interactive and video demos is available on the <Link href='/demo'>demos page</Link>.
+                </div>
+            </div>
+        )
+    }
+
     return (
         <div className={pageStyle.projects}>
             {header}
+            {demoSection}
             {filteredProjectsArray.map((p, idx) => (
                 <Project
                     key={idx}

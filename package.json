@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "main-build": "next build",
-    "build": "npm run main-build && touch out/.nojekyll && cp .gitignore out && cp -r demo out/demo",
+    "build": "npm run main-build && touch out/.nojekyll && cp .gitignore out",
     "start": "next start",
     "lint": "next lint"
   },
