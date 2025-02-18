@@ -1,13 +1,13 @@
 'use client'
 
 import pageStyle from './Skills.module.css'
-import skills from '../../data/skills'
+import skills from '../../../data/skills'
 import { useEffect, useRef, useState } from 'react'
 import sleep from '@/scripts/sleep'
 import { useViewport } from '@/hooks/useViewport'
 
 import Image from "next/image";
-import animations from '../animations.module.css'
+import animations from '../../../styles/animations.module.css'
 import useEffectNoInitialMount from '@/hooks/useEffectNoInitialMount'
 
 export default function Skills({headerViewed=false, headerDone=false}) {

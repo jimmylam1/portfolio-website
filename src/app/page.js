@@ -1,10 +1,10 @@
 'use client'
 
 import pageStyle from './page.module.css'
-import Contact from '@/components/contact/Contact'
-import Skills from '@/components/skills/Skills'
+import Contact from '@/components/homepage/contact/Contact'
+import Skills from '@/components/homepage/skills/Skills'
 import TypingHeader from '@/components/typingHeader/TypingHeader'
-import Hero from '@/components/hero/Hero'
+import Hero from '@/components/homepage/hero/Hero'
 import ProjectList from '@/components/projectList/ProjectList'
 import { useState } from 'react'
 

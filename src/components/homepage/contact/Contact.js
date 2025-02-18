@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from 'react';
 import contactCss from './Contact.module.css'
-import Modal from '../modal/Modal';
+import Modal from '../../modal/Modal';
 
 export default function Contact() {
     const [isSubmitting, setIsSubmitting] = useState(false)

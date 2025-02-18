@@ -8,6 +8,8 @@ export default function Hero({children, showToroid=false}) {
     const [starOverlayClasses, setStarOverlayClasses] = useState(`${heroCss.starOverlay}`)
 
     useEffect(() => {
+        // show star overlay after component is rendered since otherwise there is 
+        // a chance the white overlay background will be shown
         setStarOverlayClasses(`${heroCss.starOverlay} ${heroCss.showStarOverlay}`)
     }, [])
 
@@ -17,6 +19,7 @@ export default function Hero({children, showToroid=false}) {
 
     return (
         <div className={heroCss.hero}>
+
             <div className={starOverlayClasses}></div>
             <div className={heroCss.starDots}></div>
             <div className={toroidClasses}>

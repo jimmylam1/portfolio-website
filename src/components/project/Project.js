@@ -5,7 +5,7 @@ import Link from 'next/link';
 import LinkButton from "@/components/linkButton/LinkButton"
 import Tag from "../tag/Tag";
 import projectCss from './Project.module.css'
-import animations from '../animations.module.css'
+import animations from '../../styles/animations.module.css'
 import useWindowSize from "@/hooks/useWindowSize";
 import { useRef } from "react";
 import { useViewport } from "@/hooks/useViewport";

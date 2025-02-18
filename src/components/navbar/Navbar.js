@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation'
 
 const links = [
     ['/projects', 'Projects', '_self'],
-    ['https://api.jimmyl.dev/resume', 'Resume', '_blank'],
+    ['/resume', 'Resume', '_self'], // Resume is routed on the site host
     ['https://github.com/jimmylam1', 'GitHub', '_blank'],
     ['https://www.linkedin.com/in/jimmylamdev', 'LinkedIn', '_blank']
 ]

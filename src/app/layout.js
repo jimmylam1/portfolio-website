@@ -1,4 +1,4 @@
-import './globals.css'
+import '../styles/globals.css'
 import { Inter, Poppins, Roboto, Roboto_Mono } from 'next/font/google'
 import Navbar from '@/components/navbar/Navbar'
 import Script from 'next/script'

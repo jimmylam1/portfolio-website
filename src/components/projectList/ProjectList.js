@@ -2,7 +2,7 @@
 
 import projectsArray from '../../data/projects'
 import pageStyle from './ProjectList.module.css'
-import animationCss from '../animations.module.css'
+import animationCss from '../../styles/animations.module.css'
 import { Project } from '../project/Project'
 import Link from 'next/link'
 import { useRef, useState } from 'react'
