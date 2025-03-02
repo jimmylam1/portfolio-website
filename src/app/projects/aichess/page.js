@@ -13,7 +13,7 @@ export default function DiscordBots() {
                 <div className={pageCss.content}>
                     <h2>About</h2>
                     <p>
-                        This project is a command line artificial intelligence (AI) chess game. This game can be played with or without AI, and it has support for two players to play on separate computers.                  
+                        This project is a command line artificial intelligence chess game. This game can be played with or without AI, and it has support for two players to play on separate computers.                  
                     </p>
 
                     <h2>How was it built?</h2>

@@ -50,13 +50,13 @@ const projects = [
         bulletPoints: [
             'A central website for Mario Kart',
             'Manages tournaments throughout the year',
-            'Over 40,000 registered players',
+            'Over 50,000 registered players',
             'Currently being rewritten from the ground up'
         ],
         pageUrl: '/projects/mkc',
         links: {
             demo: null,
-            github: null,
+            github: 'https://github.com/MarioKartCentral/MarioKartCentral',
             website: 'https://mariokartcentral.com',
             video: null,
         },
